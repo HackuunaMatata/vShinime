@@ -4,10 +4,17 @@ package entities;
  * Created by HackuunaMatata on 11.01.2017.
  */
 public class Users {
-    int id;
-    String login;
-    String password;
-    String email;
+    private int id;
+    private String login;
+    private String password;
+    private String email;
+
+    public Users(int id, String login, String password, String email) {
+        this.id = id;
+        this.login = login;
+        this.password = password;
+        this.email = email;
+    }
 
     public int getId() {
         return id;

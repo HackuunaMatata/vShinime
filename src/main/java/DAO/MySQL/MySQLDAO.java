@@ -41,6 +41,23 @@ public class MySQLDAO extends DAOFactory {
         }
     }
 
+    public ResultSet select(String table, String condition) {
+        String sql = "SELECT * FROM " + table + " WHERE " + condition;
+        System.out.println(sql);
+        Connection connection = connectionPool.retrieve();
+        try {
+            Statement st = connection.createStatement();
+            ResultSet resultSet = st.executeQuery(sql);
+            System.out.println("OK");
+            return resultSet;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            connectionPool.putback(connection);
+        }
+        return null;
+    }
+
     @Override
     public UsersDAO getUsersDAO() {
         return new MySQLUsersDAO();

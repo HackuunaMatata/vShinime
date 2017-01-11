@@ -13,8 +13,11 @@ public class Main {
 
         MySQLDAO sql = DAOFactory.getInstanceMySQL();
         UsersDAO usersDAO = sql.getUsersDAO();
-        usersDAO.addUser("sasha", "sasha", "sasha");
-
+        //usersDAO.addUser("sasha", "sasha", "sasha");
+        System.out.println(usersDAO.getTable());
+        System.out.println(usersDAO.getIdByLogin("123"));
+        System.out.println(usersDAO.getUserById(2));
+        System.out.println(usersDAO.getUserById(10));
 
     }
 }
