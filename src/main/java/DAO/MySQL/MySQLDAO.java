@@ -58,6 +58,21 @@ public class MySQLDAO extends DAOFactory {
         return null;
     }
 
+    public void update(String table, String set, String condition) {
+        String sql = "UPDATE " + table + " SET " + set + " WHERE " + condition;
+        System.out.println(sql);
+        Connection connection = connectionPool.retrieve();
+        try {
+            Statement st = connection.createStatement();
+            st.executeUpdate(sql);
+            System.out.println("Success");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            connectionPool.putback(connection);
+        }
+    }
+
     @Override
     public UsersDAO getUsersDAO() {
         return new MySQLUsersDAO();

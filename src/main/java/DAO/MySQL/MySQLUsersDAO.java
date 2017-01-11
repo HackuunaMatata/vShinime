@@ -61,4 +61,13 @@ public class MySQLUsersDAO extends MySQLDAO implements UsersDAO {
         return null;
     }
 
+    public void updateUser(String newPassword, String newEmail, int id) {
+        String set;
+        String setPassword = newPassword == null ? "" : "password='" + newPassword + "'";
+        String setEmail = newEmail == null ? "" : "email='" + newEmail + "'";
+        if (!setPassword.equals("") && !setEmail.equals("")) set = setPassword + ", " + setEmail;
+        else set = setPassword + setEmail;
+        update("users", set, "id='" + id + "'");
+    }
+
 }

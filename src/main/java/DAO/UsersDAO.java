@@ -12,4 +12,5 @@ public interface UsersDAO {
     public List<Users> getTable();
     public int getIdByLogin(String login);
     public Users getUserById(int id);
+    public void updateUser(String newPassword, String newEmail, int id);
 }
