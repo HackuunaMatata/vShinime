@@ -20,24 +20,8 @@ public class MySQLUserInfoDAO extends MySQLDAO implements UserInfoDAO {
     }
 
     public List<UserInfo> getTable() {
-        List<UserInfo> userInfo = new ArrayList<>();
         ResultSet resultSet = select("userinfo", "1");
-        try {
-            while (resultSet.next()) {
-                UserInfo info = new UserInfo(resultSet.getInt("id"),
-                        resultSet.getString("name"),
-                        resultSet.getString("surname"),
-                        resultSet.getInt("position_id"),
-                        resultSet.getDate("bday"),
-                        resultSet.getString("magazine"),
-                        resultSet.getString("photo"));
-                userInfo.add(info);
-            }
-            return userInfo;
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        return null;
+        return getListFromResultSet(resultSet);
     }
 
     public UserInfo getUserInfoById(int id) {
@@ -52,6 +36,44 @@ public class MySQLUserInfoDAO extends MySQLDAO implements UserInfoDAO {
                     resultSet.getString("magazine"),
                     resultSet.getString("photo"));
             return info;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    public List<UserInfo> getForHead(String magazine) {
+        String condition = "magazine='" + magazine + "' AND position_id=3 OR position_id=2 OR position_id=1";
+        ResultSet resultSet = select("userinfo", condition);
+        return getListFromResultSet(resultSet);
+    }
+
+    public List<UserInfo> getForJournalist(String magazine) {
+        String condition = "magazine='" + magazine + "' AND (position_id=3 OR position_id=1)";
+        ResultSet resultSet = select("userinfo", condition);
+        return getListFromResultSet(resultSet);
+    }
+
+    public List<UserInfo> getForOwner() {
+        String condition = "position_id=1 OR position_id=2";
+        ResultSet resultSet = select("userinfo", condition);
+        return getListFromResultSet(resultSet);
+    }
+
+    private List<UserInfo> getListFromResultSet(ResultSet resultSet) {
+        List<UserInfo> userInfo = new ArrayList<>();
+        try {
+            while(resultSet.next()) {
+                UserInfo info = new UserInfo(resultSet.getInt("id"),
+                        resultSet.getString("name"),
+                        resultSet.getString("surname"),
+                        resultSet.getInt("position_id"),
+                        resultSet.getDate("bday"),
+                        resultSet.getString("magazine"),
+                        resultSet.getString("photo"));
+                userInfo.add(info);
+            }
+            return userInfo;
         } catch (SQLException e) {
             e.printStackTrace();
         }

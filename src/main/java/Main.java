@@ -3,6 +3,8 @@ import DAO.MySQL.MySQLDAO;
 import entities.Articles;
 
 import java.sql.Date;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
 
 /**
  * Created by HackuunaMatata on 11.01.2017.
@@ -25,6 +27,7 @@ public class Main {
         // usersDAO.updateUser("3", "3", 3);
 
         UserInfoDAO userInfoDAO = sql.getUserInfoDAO();
+        //new GregorianCalendar(116, 1, 1).getTimeInMillis()
         //userInfoDAO.addUserInfo(2, "po", "po", 3,  new Date(116, 01, 01), "fgh", "pou");
         //System.out.println(userInfoDAO.getTable());
         //System.out.println(userInfoDAO.getUserInfoById(1));
@@ -43,5 +46,10 @@ public class Main {
         //articlesDAO.deleteArticleForUser("1", 3);
         //articlesDAO.deleteAllArticlesForUser(3);
 
+        MessagesDAO messagesDAO = sql.getMessagesDAO();
+        //messagesDAO.addMessage(3, 2, "ooooo");
+        //System.out.println(messagesDAO.getMessages(3, 2));
+        //System.out.println(messagesDAO.countUnreadMessages(3, 2));
+        //messagesDAO.readMessages(3, 2);
     }
 }

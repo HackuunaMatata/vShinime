@@ -55,6 +55,23 @@ public class MySQLDAO extends DAOFactory {
         return null;
     }
 
+    protected ResultSet count(String table, String condition) {
+        String sql = "SELECT COUNT(*) FROM " + table + " WHERE " + condition;
+        System.out.println(sql);
+        Connection connection = connectionPool.retrieve();
+        try {
+            Statement st = connection.createStatement();
+            ResultSet resultSet = st.executeQuery(sql);
+            System.out.println("Counted");
+            return resultSet;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            connectionPool.putback(connection);
+        }
+        return null;
+    }
+
     protected void update(String table, String set, String condition) {
         String sql = "UPDATE " + table + " SET " + set + " WHERE " + condition;
         System.out.println(sql);
@@ -103,5 +120,10 @@ public class MySQLDAO extends DAOFactory {
     @Override
     public ArticlesDAO getArticlesDAO() {
         return new MySQLArticlesDAO();
+    }
+
+    @Override
+    public MessagesDAO getMessagesDAO() {
+        return new MySQLMessagesDAO();
     }
 }
