@@ -1,5 +1,6 @@
 import DAO.DAOFactory;
 import DAO.MySQL.MySQLDAO;
+import DAO.PositionsDAO;
 import DAO.UserInfoDAO;
 import DAO.UsersDAO;
 
@@ -27,6 +28,10 @@ public class Main {
         //userInfoDAO.addUserInfo(2, "po", "po", 3, 2016-02-01, "fgh", "pou"); //КАК ДАТУ?
         //System.out.println(userInfoDAO.getTable());
         //System.out.println(userInfoDAO.getUserInfoById(1));
-        userInfoDAO.updateUserInfo("alex", null, 2, null, "df", 1);
+        //userInfoDAO.updateUserInfo("alex", null, 2, null, "df", 1);
+
+        PositionsDAO positionsDAO = sql.getPositionsDAO();
+        //System.out.println(positionsDAO.getTable());
+        System.out.println(positionsDAO.getPositionById(2));
     }
 }

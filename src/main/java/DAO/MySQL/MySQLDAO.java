@@ -1,9 +1,6 @@
 package DAO.MySQL;
 
-import DAO.ConnectionPool;
-import DAO.DAOFactory;
-import DAO.UserInfoDAO;
-import DAO.UsersDAO;
+import DAO.*;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -81,5 +78,10 @@ public class MySQLDAO extends DAOFactory {
     @Override
     public UserInfoDAO getUserInfoDAO() {
         return new MySQLUserInfoDAO();
+    }
+
+    @Override
+    public PositionsDAO getPositionsDAO() {
+        return new MySQLPositionsDAO();
     }
 }
