@@ -39,9 +39,9 @@ public class Main {
         //System.out.println(articlesDAO.getArticlesByUserId(-1));
         //System.out.println(articlesDAO.getArticlesByUserId(2));
         //articlesDAO.updateArticleForUser("black-white", new Date(116, 00, 22), 1, "zxc");
-        //articlesDAO.updateArticleForUser("", new Date(116, 00, 22), 1, "zxc");
+        //articlesDAO.updateArticleForUser(null, new Date(116, 00, 22), 1, "zxc");
         //articlesDAO.deleteArticleForUser("1", 3);
-        articlesDAO.deleteAllArticlesForUser(3);
+        //articlesDAO.deleteAllArticlesForUser(3);
 
     }
 }

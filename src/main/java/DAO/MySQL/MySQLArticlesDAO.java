@@ -39,7 +39,10 @@ public class MySQLArticlesDAO extends MySQLDAO implements ArticlesDAO {
     }
 
     public void updateArticleForUser(String newAnnotation, Date newDate, int userId, String title) {
-        String set = "annotation='" + newAnnotation + "', date='" + newDate + "'";
+        String set;
+        String setAnnotation = newAnnotation == null ? "annotation=''" : "annotation='" + newAnnotation + "'";
+        set = setAnnotation + ", date='" + newDate + "'";
+        //String set = "annotation='" + newAnnotation + "', date='" + newDate + "'";
         update("articles", set, "user_id='" + userId + "' AND title='" + title + "'");
     }
 
