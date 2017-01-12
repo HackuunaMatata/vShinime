@@ -16,14 +16,14 @@ public class MySQLDAO extends DAOFactory {
     private final static String USERNAME = "root";
     private final static String PASSWORD = "root";
 
-    private ConnectionPool connectionPool;
+    private static ConnectionPool connectionPool = null;
 
     public MySQLDAO() {
-        connectionPool = new ConnectionPool(DRIVER, URL, USERNAME, PASSWORD);
+        if (connectionPool == null)
+            connectionPool = new ConnectionPool(DRIVER, URL, USERNAME, PASSWORD);
     }
 
-    //TODO protected
-    public void insert(String table, String value) {
+    protected void insert(String table, String value) {
         String sql = "INSERT INTO " + table + " VALUE(" + value + ")";
         System.out.println(sql);
         Connection connection = connectionPool.retrieve();
@@ -38,7 +38,7 @@ public class MySQLDAO extends DAOFactory {
         }
     }
 
-    public ResultSet select(String table, String condition) {
+    protected ResultSet select(String table, String condition) {
         String sql = "SELECT * FROM " + table + " WHERE " + condition;
         System.out.println(sql);
         Connection connection = connectionPool.retrieve();
@@ -55,7 +55,7 @@ public class MySQLDAO extends DAOFactory {
         return null;
     }
 
-    public void update(String table, String set, String condition) {
+    protected void update(String table, String set, String condition) {
         String sql = "UPDATE " + table + " SET " + set + " WHERE " + condition;
         System.out.println(sql);
         Connection connection = connectionPool.retrieve();
@@ -70,7 +70,7 @@ public class MySQLDAO extends DAOFactory {
         }
     }
 
-    public void delete(String table, String condition) {
+    protected void delete(String table, String condition) {
         String sql = "DELETE FROM " + table + " WHERE " + condition;
         System.out.println(sql);
         Connection connection = connectionPool.retrieve();

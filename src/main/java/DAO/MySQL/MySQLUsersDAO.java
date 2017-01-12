@@ -13,8 +13,9 @@ import java.util.List;
  */
 public class MySQLUsersDAO extends MySQLDAO implements UsersDAO {
 
-    public void addUser(String login, String password, String email) {
+    public int addUser(String login, String password, String email) {
         insert("users (`login`, `password`, `email`)", "'" + login + "', '" + password + "', '" + email + "'");
+        return getIdByLogin(login);
     }
 
     public List<Users> getTable() {
