@@ -1,6 +1,6 @@
 package entities;
 
-import java.util.Date;
+import java.sql.Date;
 
 /**
  * Created by HackuunaMatata on 11.01.2017.
@@ -13,6 +13,16 @@ public class UserInfo {
     Date bday;
     String magazine;
     String photo;
+
+    public UserInfo(int id, String name, String surname, int positionId, Date bday, String magazine, String photo) {
+        this.id = id;
+        this.name = name;
+        this.surname = surname;
+        this.positionId = positionId;
+        this.bday = bday;
+        this.magazine = magazine;
+        this.photo = photo;
+    }
 
     public int getId() {
         return id;
