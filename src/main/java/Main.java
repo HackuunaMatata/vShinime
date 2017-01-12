@@ -1,8 +1,8 @@
-import DAO.DAOFactory;
+import DAO.*;
 import DAO.MySQL.MySQLDAO;
-import DAO.PositionsDAO;
-import DAO.UserInfoDAO;
-import DAO.UsersDAO;
+import entities.Articles;
+
+import java.sql.Date;
 
 /**
  * Created by HackuunaMatata on 11.01.2017.
@@ -25,13 +25,23 @@ public class Main {
         // usersDAO.updateUser("3", "3", 3);
 
         UserInfoDAO userInfoDAO = sql.getUserInfoDAO();
-        //userInfoDAO.addUserInfo(2, "po", "po", 3, 2016-02-01, "fgh", "pou"); //КАК ДАТУ?
+        //userInfoDAO.addUserInfo(2, "po", "po", 3,  new Date(116, 01, 01), "fgh", "pou");
         //System.out.println(userInfoDAO.getTable());
         //System.out.println(userInfoDAO.getUserInfoById(1));
         //userInfoDAO.updateUserInfo("alex", null, 2, null, "df", 1);
 
         PositionsDAO positionsDAO = sql.getPositionsDAO();
         //System.out.println(positionsDAO.getTable());
-        System.out.println(positionsDAO.getPositionById(2));
+        //System.out.println(positionsDAO.getPositionById(2));
+
+        ArticlesDAO articlesDAO = sql.getArticlesDAO();
+        //articlesDAO.addArticle(3, "2", "2", new Date(115, 04, 10));
+        //System.out.println(articlesDAO.getArticlesByUserId(-1));
+        //System.out.println(articlesDAO.getArticlesByUserId(2));
+        //articlesDAO.updateArticleForUser("black-white", new Date(116, 00, 22), 1, "zxc");
+        //articlesDAO.updateArticleForUser("", new Date(116, 00, 22), 1, "zxc");
+        //articlesDAO.deleteArticleForUser("1", 3);
+        articlesDAO.deleteAllArticlesForUser(3);
+
     }
 }

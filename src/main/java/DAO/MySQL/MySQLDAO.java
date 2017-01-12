@@ -70,6 +70,21 @@ public class MySQLDAO extends DAOFactory {
         }
     }
 
+    public void delete(String table, String condition) {
+        String sql = "DELETE FROM " + table + " WHERE " + condition;
+        System.out.println(sql);
+        Connection connection = connectionPool.retrieve();
+        try {
+            Statement st = connection.createStatement();
+            st.executeUpdate(sql);
+            System.out.println("Deleted");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            connectionPool.putback(connection);
+        }
+    }
+
     @Override
     public UsersDAO getUsersDAO() {
         return new MySQLUsersDAO();
@@ -83,5 +98,10 @@ public class MySQLDAO extends DAOFactory {
     @Override
     public PositionsDAO getPositionsDAO() {
         return new MySQLPositionsDAO();
+    }
+
+    @Override
+    public ArticlesDAO getArticlesDAO() {
+        return new MySQLArticlesDAO();
     }
 }

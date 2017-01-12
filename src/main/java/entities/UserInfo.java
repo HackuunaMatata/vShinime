@@ -6,13 +6,13 @@ import java.sql.Date;
  * Created by HackuunaMatata on 11.01.2017.
  */
 public class UserInfo {
-    int id;
-    String name;
-    String surname;
-    int positionId;
-    Date bday;
-    String magazine;
-    String photo;
+    private int id;
+    private String name;
+    private String surname;
+    private int positionId;
+    private Date bday;
+    private String magazine;
+    private String photo;
 
     public UserInfo(int id, String name, String surname, int positionId, Date bday, String magazine, String photo) {
         this.id = id;

@@ -4,8 +4,8 @@ package entities;
  * Created by HackuunaMatata on 12.01.2017.
  */
 public class Positions {
-    int id;
-    String name;
+    private int id;
+    private String name;
 
     public Positions(int id, String name) {
         this.id = id;
