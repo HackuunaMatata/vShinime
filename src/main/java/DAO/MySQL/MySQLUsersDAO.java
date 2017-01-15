@@ -42,7 +42,8 @@ public class MySQLUsersDAO extends MySQLDAO implements UsersDAO {
             resultSet.next();
             return resultSet.getInt("id");
         } catch (SQLException e) {
-            e.printStackTrace();
+            System.err.println("Incorrect login");
+//            e.printStackTrace();
         }
         return -1;
     }

@@ -10,6 +10,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.List;
 
@@ -31,9 +32,8 @@ public class MainServlet extends HttpServlet {
         UsersDAO usersDAO = dao.getUsersDAO();
         List<Users> list = usersDAO.getTable();
 
-        System.out.println(list);
-
-        System.out.println("MainServlet");
+//        System.out.println(list);
+//        System.out.println("MainServlet");
 
         request.setAttribute("usersList", list);
         request.setAttribute("title", "Hello, JSP");

@@ -1,0 +1,7 @@
+.common-label label {
+    padding: 0;
+    font-size: 1.2em;
+}
+.info {
+    border-left: solid #ddd 2px;
+}
