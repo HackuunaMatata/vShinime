@@ -81,6 +81,22 @@ public class UserInfo {
     }
 
     @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        UserInfo userInfo = (UserInfo) o;
+
+        if (id != userInfo.id) return false;
+        if (positionId != userInfo.positionId) return false;
+        if (name != null ? !name.equals(userInfo.name) : userInfo.name != null) return false;
+        if (surname != null ? !surname.equals(userInfo.surname) : userInfo.surname != null) return false;
+        if (bday != null ? !bday.equals(userInfo.bday) : userInfo.bday != null) return false;
+        if (magazine != null ? !magazine.equals(userInfo.magazine) : userInfo.magazine != null) return false;
+        return photo != null ? photo.equals(userInfo.photo) : userInfo.photo == null;
+    }
+
+    @Override
     public String toString() {
         return "UserInfo{" +
                 "id=" + id +

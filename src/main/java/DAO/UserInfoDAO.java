@@ -13,4 +13,7 @@ public interface UserInfoDAO {
     public List<UserInfo> getTable();
     public UserInfo getUserInfoById(int id);
     public void updateUserInfo(String newName, String newSurname, int newPositionId, String newMagazine, String newPhoto, int id);
+    public List<UserInfo> getForHead(String magazine);
+    public List<UserInfo> getForJournalist(String magazine);
+    public List<UserInfo> getForOwner();
 }

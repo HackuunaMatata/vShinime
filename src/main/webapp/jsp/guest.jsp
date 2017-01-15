@@ -1,21 +1,21 @@
-<%@ page import="java.text.SimpleDateFormat" %>
-<%--
+<%@ page import="java.text.SimpleDateFormat" %><%--
   Created by IntelliJ IDEA.
   User: HackuunaMatata
-  Date: 15.01.2017
-  Time: 18:25
+  Date: 16.01.2017
+  Time: 1:33
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
+<jsp:useBean id="friend" scope="request" type="entities.Users"/>
 <jsp:useBean id="userInfo" scope="request" type="entities.UserInfo"/>
 <jsp:useBean id="position" scope="request" type="java.lang.String"/>
 <jsp:useBean id="articles" scope="request" type="java.util.List"/>
 
 <html>
 <head>
-    <title>Profile</title>
+    <title>Your friend</title>
     <link rel="stylesheet" type="text/css" href="../styles/css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="../styles/css/mainPage.css">
 </head>
@@ -30,7 +30,7 @@
         <small><cite title="job">${userInfo.getMagazine()}, ${position} <i class="glyphicon glyphicon-gift">
         </i></cite></small>
         <p>
-            <i class="glyphicon glyphicon-envelope"></i>${user.getEmail()}
+            <i class="glyphicon glyphicon-envelope"></i>${friend.getEmail()}
             <br/>
             <% String date = new SimpleDateFormat("dd MMMMM, yyyy").format(userInfo.getBday()); %>
             <i class="glyphicon glyphicon-text-color"></i><%=date%>
@@ -47,17 +47,12 @@
                     <small><cite title="date">${article.getDate()}<i class="glyphicon glyphicon-gift">
                     </i></cite></small>
                     <p>${article.getAnnotation()}</p>
-                    <div>
-                        <a href="#" class="btn btn-info" role="button">Edit Information</a>
-                        <a href="deleteArticle?id=${article.getUserId()}&title=${article.getTitle()}" class="btn btn-primary pull-right" role="button">Delete Article</a>
-                    </div>
                 </div>
             </div>
         </div>
     </c:forEach>
 </div>
 
-</div>
-
 </body>
 </html>
+

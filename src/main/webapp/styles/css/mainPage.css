@@ -1,3 +1,22 @@
+@font-face {
+    font-family: vShinime; /* Имя шрифта */
+    src: url(/styles/fonts/Pollock2C.otf); /* Путь к файлу со шрифтом */
+}
+
+body {
+    font-family: vShinime, Arial, sans-serif;
+}
+
+.shinima-header {
+    padding: 8px 100px;
+    background-color: #505050;
+    font-size: 1.2em;
+}
+.navbar-brand {
+    cursor: default;
+    font-size: 1.3em;
+}
+
 .common-label label {
     padding: 0;
     font-size: 1.2em;
@@ -30,4 +49,25 @@ small {
 
 .info {
     border-left: solid #ddd 2px;
+}
+
+.table-friends {
+    padding: 10px;
+}
+
+.table-friends table {
+    font-size: 1.2em;
+    border: solid #ddd 2px;
+}
+.table-friends table td {
+    width: 25%;
+}
+
+.table-friends a {
+    padding: 1px 10px;
+    margin-right: 50px;
+}
+
+.table-friends table tr:first-child {
+    border: solid #ddd 2px;
 }
