@@ -11,20 +11,6 @@
     </head>
     <body>
     <%@ include file="jsp/header.jsp" %>
-
-    <%--<div>--%>
-        <%--<ul>--%>
-            <%--<li>--%>
-                <%--<h1>${title}</h1>--%>
-            <%--</li>--%>
-            <%--<hr/>--%>
-            <%--<c:forEach var="user" items="${usersList}">--%>
-                <%--<li>--%>
-                    <%--${user.getLogin()}&nbsp;${user.getPassword()}&nbsp;${user.getEmail()}--%>
-                <%--</li>--%>
-            <%--</c:forEach>--%>
-        <%--</ul>--%>
-    <%--</div>--%>
     <div>
         <div class="col-md-3">
             <c:if test="${!loginError.equals('')}">
