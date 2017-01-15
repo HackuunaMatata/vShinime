@@ -1,11 +1,11 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-<jsp:useBean id="usersList" scope="request" type="java.util.List"/>
-<jsp:useBean id="title" scope="request" type="java.lang.String"/>
+<jsp:useBean id="loginError" scope="request" type="java.lang.String"/>
 
 <html>
     <head>
+        <title>vShinime</title>
         <link rel="stylesheet" type="text/css" href="styles/css/bootstrap.css">
         <link rel="stylesheet" type="text/css" href="styles/css/mainPage.css">
     </head>
@@ -27,23 +27,26 @@
     <%--</div>--%>
     <div>
         <div class="col-md-3">
+            <c:if test="${!loginError.equals('')}">
+                <div class="alert alert-danger" role="alert">${loginError}</div>
+            </c:if>
             <form action="login" method="post" class="form-horizontal common-label">
                 <div class="form-group">
                     <label for="inputLogin" class="col-md-3 control-label">Login</label>
                     <div class="col-md-9">
-                        <input type="text" class="form-control" name="login" id="inputLogin" placeholder="Login">
+                        <input type="text" class="form-control" name="login" id="inputLogin" placeholder="Login" required>
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="inputPassword" class="col-md-3 control-label">Password</label>
                     <div class="col-md-9">
-                        <input type="password" class="form-control" name="password" id="inputPassword" placeholder="Password">
+                        <input type="password" class="form-control" name="password" id="inputPassword" placeholder="Password" required>
                     </div>
                 </div>
                 <div class="form-group">
                     <div class="col-md-offset-3 col-md-9">
                         <button type="submit" class="btn btn-primary col-md-5">Sign In</button>
-                        <a href="jsp/registration.jsp" type="button" class="btn btn-default pull-right col-md-5">Sign Up</a>
+                        <a href="registration" type="button" class="btn btn-default pull-right col-md-5">Sign Up</a>
                     </div>
                 </div>
             </form>

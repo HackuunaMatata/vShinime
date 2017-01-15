@@ -15,7 +15,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.List;
 
 /**
  * Created by HackuunaMatata on 12.01.2017.
@@ -32,18 +31,19 @@ public class LoginServlet extends HttpServlet {
         MySQLDAO dao = DAOFactory.getInstanceMySQL();
         UsersDAO usersDAO = dao.getUsersDAO();
         try {
-            if (login.equals("") && password.equals("")) throw new Error("Incorrect");
+            if (login.equals("") || password.equals("")) throw new Error("Incorrect");
             int id = usersDAO.getIdByLogin(login);
-            if (id == -1) throw new Error("Incorrect");
+            if (id == -1) throw new Error("Incorrect login or password");
 
             Users user = usersDAO.getUserById(id);
-            if (!user.getPassword().equals(password)) throw new Error("Incorrect");
+            if (!user.getPassword().equals(password)) throw new Error("Incorrect login or password");
 
             request.getSession().setAttribute("user", user);
 
-            request.getRequestDispatcher("/jsp/registration.jsp").forward(request, response);
+            response.sendRedirect("/profile");
         } catch (Error e) {
-            response.sendRedirect("/");
+            request.setAttribute("loginError", e.getMessage());
+            request.getRequestDispatcher("/index.jsp").forward(request, response);
         }
     }
 

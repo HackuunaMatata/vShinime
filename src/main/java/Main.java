@@ -35,7 +35,7 @@ public class Main {
 
         PositionsDAO positionsDAO = sql.getPositionsDAO();
         //System.out.println(positionsDAO.getTable());
-        //System.out.println(positionsDAO.getPositionById(2));
+        //System.out.println(positionsDAO.getPositionById(-1));
 
         ArticlesDAO articlesDAO = sql.getArticlesDAO();
         //articlesDAO.addArticle(3, "2", "2", new Date(115, 04, 10));
