@@ -18,15 +18,15 @@
             </c:if>
             <form action="login" method="post" class="form-horizontal common-label">
                 <div class="form-group">
-                    <label for="inputLogin" class="col-md-3 control-label">Login</label>
+                    <label for="inputLogin" class="col-md-3 control-label"><fmt:message key='login'/></label>
                     <div class="col-md-9">
-                        <input type="text" class="form-control" name="login" id="inputLogin" placeholder="Login" required>
+                        <input type="text" class="form-control" name="login" id="inputLogin" placeholder="<fmt:message key='login'/>" required>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="inputPassword" class="col-md-3 control-label">Password</label>
+                    <label for="inputPassword" class="col-md-3 control-label"><fmt:message key='password'/></label>
                     <div class="col-md-9">
-                        <input type="password" class="form-control" name="password" id="inputPassword" placeholder="Password" required>
+                        <input type="password" class="form-control" name="password" id="inputPassword" placeholder="<fmt:message key='password'/>" required>
                     </div>
                 </div>
                 <div class="form-group">

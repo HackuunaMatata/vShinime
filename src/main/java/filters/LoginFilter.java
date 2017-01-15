@@ -25,7 +25,7 @@ public class LoginFilter implements Filter {
         HttpSession session = request.getSession();
         String requestURI = request.getRequestURI();
 
-        if (requestURI.startsWith("/styles/")) {
+        if (requestURI.startsWith("/styles/") || requestURI.startsWith("/changeLocale")) {
             chain.doFilter(request, response);
             return;
         }

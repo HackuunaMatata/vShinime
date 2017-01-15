@@ -7,6 +7,7 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <jsp:useBean id="user" scope="session" type="entities.Users"/>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
 <header class="navbar navbar-default shinima-header">
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -27,8 +28,8 @@
             </ul>
         </c:if>
         <ul class="nav navbar-nav navbar-right">
-            <li><a href="#">РУС</a></li>
-            <li><a href="#">ENG</a></li>
+            <li><a href="changeLocale?locale=ru_RU" class="">РУС</a></li>
+            <li><a href="changeLocale?locale=en_US" class="">ENG</a></li>
         </ul>
     </div>
 </header>
