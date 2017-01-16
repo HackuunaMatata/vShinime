@@ -12,7 +12,7 @@
 <html>
 <head>
     <title>Colleagues</title>
-    <link rel="stylesheet" type="text/css" href="../styles/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../styles/bootstrap/css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="../styles/css/mainPage.css">
 </head>
 <body>

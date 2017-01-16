@@ -6,15 +6,21 @@
 body {
     font-family: vShinime, Arial, sans-serif;
 }
-
 .shinima-header {
     padding: 8px 100px;
     background-color: #505050;
     font-size: 1.2em;
 }
 .navbar-brand {
-    cursor: default;
     font-size: 1.3em;
+}
+.shinima-input-file {
+    margin-top: 12px;
+    color: white;
+}
+.shinima-select {
+    margin-top: 10px;
+    color: black;
 }
 
 .common-label label {
@@ -35,7 +41,7 @@ body {
     margin: 0;
 }
 
-.glyphicon {  margin-bottom: 10px; margin-right: 10px;}
+/*.glyphicon {  margin-bottom: 10px; margin-right: 10px;}*/
 
 small {
     display: block;
@@ -59,6 +65,7 @@ small {
     font-size: 1.2em;
     border: solid #ddd 2px;
 }
+
 .table-friends table td {
     width: 25%;
 }
@@ -76,4 +83,8 @@ small {
     cursor: pointer;
     display: block;
     margin: 0 auto;
+}
+
+.second-column-form {
+    border-left: solid #ddd 2px;
 }

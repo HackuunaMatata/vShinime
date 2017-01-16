@@ -12,7 +12,7 @@
 <header class="navbar navbar-default shinima-header">
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <div class="navbar-header">
-            <a class="navbar-brand" href="#">vShinime</a>
+            <a class="navbar-brand" href="/">vShinime</a>
         </div>
         <c:if test="${user.getLogin() != null}">
             <div class="navbar-header">
@@ -24,6 +24,7 @@
             <ul class="nav navbar-nav">
                 <li><a href="profile"><fmt:message key='profile'/></a></li>
                 <li><a href="friends"><fmt:message key='colleagues'/></a></li>
+                <li><a href="editProfile">Edit</a></li>
                 <li><a href="logout"><fmt:message key='exit'/></a></li>
             </ul>
         </c:if>

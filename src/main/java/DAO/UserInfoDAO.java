@@ -12,7 +12,7 @@ public interface UserInfoDAO {
     public void addUserInfo(int id, String name, String surname, int positionId, Date bday, String magazine, String photo);
     public List<UserInfo> getTable();
     public UserInfo getUserInfoById(int id);
-    public void updateUserInfo(String newName, String newSurname, int newPositionId, String newMagazine, String newPhoto, int id);
+    public void updateUserInfo(String newName, String newSurname, Date bday, int newPositionId, String newMagazine, String newPhoto, int id);
     public List<UserInfo> getForHead(String magazine);
     public List<UserInfo> getForJournalist(String magazine);
     public List<UserInfo> getForOwner();

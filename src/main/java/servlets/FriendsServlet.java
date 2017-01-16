@@ -52,15 +52,20 @@ public class FriendsServlet extends HttpServlet {
                 break;
             case 5:
                 friends = userInfoDAO.getForJournalist(userInfo.getMagazine());
-                combine(friends, userInfoDAO.getForHead(userInfo.getMagazine()));
+                combine(friends, userInfoDAO.getForOwner());
                 break;
             default:
                 break;
         }
 
+        int removeId = -1;
+        for (UserInfo friend : friends) {
+            if (friend.getId() == id) removeId = friends.indexOf(friend);
+        }
+        if (removeId != -1) friends.remove(removeId);
+
         request.setAttribute("friends", friends);
         request.getRequestDispatcher("/jsp/friends.jsp").forward(request, response);
-
     }
 
 

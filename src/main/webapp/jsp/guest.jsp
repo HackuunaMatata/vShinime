@@ -16,24 +16,24 @@
 <html>
 <head>
     <title>Your colleague</title>
-    <link rel="stylesheet" type="text/css" href="../styles/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../styles/bootstrap/css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="../styles/css/mainPage.css">
 </head>
 <body>
 <%@ include file="header.jsp" %>
 <div class="row user-info">
     <div class="col-sm-6 col-md-4 user-photo">
-        <img width="200" height="200" src="../images/${userInfo.getPhoto() ? userInfo.getPhoto() : "default.png"}"/>
+        <img width="200" height="200" src="../images/data/${!userInfo.getPhoto().equals("null") ? userInfo.getPhoto() : "default.png"}"/>
     </div>
     <div class="col-sm-6 col-md-8 info big-text">
         <h2>${userInfo.getName()} ${userInfo.getSurname()}</h2>
-        <small><cite title="job">${userInfo.getMagazine()}, ${position} <i class="glyphicon glyphicon-gift">
+        <small><cite title="job">${userInfo.getMagazine()}, ${position} <i class="glyphicon glyphicon-folder-close">
         </i></cite></small>
         <p>
             <i class="glyphicon glyphicon-envelope"></i>${friend.getEmail()}
             <br/>
             <% String date = new SimpleDateFormat("dd MMMMM, yyyy").format(userInfo.getBday()); %>
-            <i class="glyphicon glyphicon-text-color"></i><%=date%>
+            <i class="glyphicon glyphicon-gift"></i><%=date%>
             <br/>
         </p>
     </div>
@@ -44,7 +44,7 @@
             <div class="thumbnail">
                 <div class="caption">
                     <h3>${article.getTitle()}</h3>
-                    <small><cite title="date">${article.getDate()}<i class="glyphicon glyphicon-gift">
+                    <small><cite title="date">${article.getDate()} <i class="glyphicon glyphicon-file">
                     </i></cite></small>
                     <p>${article.getAnnotation()}</p>
                 </div>

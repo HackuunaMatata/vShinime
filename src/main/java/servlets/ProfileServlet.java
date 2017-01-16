@@ -53,6 +53,8 @@ public class ProfileServlet extends HttpServlet {
         ArticlesDAO articlesDAO = dao.getArticlesDAO();
         List<Articles> articlesByUserId = articlesDAO.getArticlesByUserId(id);
 
+        System.out.println(userInfo);
+
         request.setAttribute("userInfo", userInfo);
         request.setAttribute("position", position);
         request.setAttribute("articles", articlesByUserId);

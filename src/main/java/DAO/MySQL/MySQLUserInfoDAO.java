@@ -43,7 +43,7 @@ public class MySQLUserInfoDAO extends MySQLDAO implements UserInfoDAO {
     }
 
     public List<UserInfo> getForHead(String magazine) {
-        String condition = "magazine='" + magazine + "' AND position_id=3 OR position_id=2 OR position_id=1";
+        String condition = "magazine='" + magazine + "' AND position_id=3 OR position_id=2 OR position_id=1 Or position_id=4";
         ResultSet resultSet = select("userinfo", condition);
         return getListFromResultSet(resultSet);
     }
@@ -55,7 +55,7 @@ public class MySQLUserInfoDAO extends MySQLDAO implements UserInfoDAO {
     }
 
     public List<UserInfo> getForOwner() {
-        String condition = "position_id=1 OR position_id=2";
+        String condition = "position_id=1 OR position_id=2 OR position_id=5 OR position_id=4";
         ResultSet resultSet = select("userinfo", condition);
         return getListFromResultSet(resultSet);
     }
@@ -80,7 +80,7 @@ public class MySQLUserInfoDAO extends MySQLDAO implements UserInfoDAO {
         return null;
     }
 
-    public void updateUserInfo(String newName, String newSurname, int newPositionId, String newMagazine, String newPhoto, int id) {
+    public void updateUserInfo(String newName, String newSurname, Date bday, int newPositionId, String newMagazine, String newPhoto, int id) {
         String set;
         String fullName;
         String fullWork;
@@ -99,8 +99,8 @@ public class MySQLUserInfoDAO extends MySQLDAO implements UserInfoDAO {
         if (!fullName.equals("") && !setPhoto.equals("")) set = fullName + ", " + setPhoto;
         else set = fullName + setPhoto;
 
-        if (!set.equals("") && !fullWork.equals("")) set += ", " + fullWork;
-        else set += fullWork;
+        if (!set.equals("") && !fullWork.equals("")) set += ", " + fullWork + ", bday='" + bday + "'";
+        else set += fullWork + ", bday='" + bday + "'";
 
         update("userinfo", set, "id='" + id + "'");
 
