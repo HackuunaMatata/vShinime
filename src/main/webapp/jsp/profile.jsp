@@ -48,13 +48,20 @@
                     </i></cite></small>
                     <p>${article.getAnnotation()}</p>
                     <div>
-                        <a href="#" class="btn btn-info" role="button">Edit Information</a>
-                        <a href="deleteArticle?id=${article.getUserId()}&title=${article.getTitle()}" class="btn btn-primary pull-right" role="button">Delete Article</a>
+                        <a href="#" class="btn btn-info" role="button"><fmt:message key='editInformation'/></a>
+                        <a href="deleteArticle?id=${article.getUserId()}&title=${article.getTitle()}" class="btn btn-primary pull-right" role="button"><fmt:message key='deleteArticle'/></a>
                     </div>
                 </div>
             </div>
         </div>
     </c:forEach>
+    <div class="col-sm-6 col-md-4">
+        <div class="thumbnail">
+            <div class="caption add-article">
+                <img height="150" width="150" src="../images/add_article.png"/>
+            </div>
+        </div>
+    </div>
 </div>
 
 </div>

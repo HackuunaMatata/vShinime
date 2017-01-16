@@ -1,6 +1,6 @@
 @font-face {
     font-family: vShinime; /* Имя шрифта */
-    src: url(/styles/fonts/Pollock2C.otf); /* Путь к файлу со шрифтом */
+    src: url(/styles/fonts/Brokgauz_Efron.ttf); /* Путь к файлу со шрифтом */
 }
 
 body {
@@ -70,4 +70,10 @@ small {
 
 .table-friends table tr:first-child {
     border: solid #ddd 2px;
+}
+
+.add-article img {
+    cursor: pointer;
+    display: block;
+    margin: 0 auto;
 }

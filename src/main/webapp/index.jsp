@@ -31,8 +31,8 @@
                 </div>
                 <div class="form-group">
                     <div class="col-md-offset-3 col-md-9">
-                        <button type="submit" class="btn btn-primary col-md-5">Sign In</button>
-                        <a href="registration" type="button" class="btn btn-default pull-right col-md-5">Sign Up</a>
+                        <button type="submit" class="btn btn-primary col-md-5"><fmt:message key='signIn'/></button>
+                        <a href="registration" type="button" class="btn btn-default pull-right col-md-5"><fmt:message key='signUp'/></a>
                     </div>
                 </div>
             </form>

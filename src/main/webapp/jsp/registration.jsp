@@ -25,38 +25,38 @@
         <div class="col-md-offset-4 col-md-4">
             <form action="registration" method="post" class="form-horizontal common-label">
                 <div class="form-group">
-                    <label for="inputName" class="col-md-3 control-label">Name</label>
+                    <label for="inputName" class="col-md-3 control-label"><fmt:message key='name'/></label>
                     <div class="col-md-9">
-                        <input type="text" class="form-control" name="name" id="inputName" placeholder="Name" required>
+                        <input type="text" class="form-control" name="name" id="inputName" placeholder=<fmt:message key='name'/> required>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="inputSurname" class="col-md-3 control-label">Surname</label>
+                    <label for="inputSurname" class="col-md-3 control-label"><fmt:message key='surname'/></label>
                     <div class="col-md-9">
-                        <input type="text" class="form-control" name="surname" id="inputSurname" placeholder="Surname" required>
+                        <input type="text" class="form-control" name="surname" id="inputSurname" placeholder=<fmt:message key='surname'/> required>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="inputEmail" class="col-md-3 control-label">Email</label>
+                    <label for="inputEmail" class="col-md-3 control-label"><fmt:message key='email'/></label>
                     <div class="col-md-9">
-                        <input type="email" class="form-control" name="email" id="inputEmail" placeholder="Email" required>
+                        <input type="email" class="form-control" name="email" id="inputEmail" placeholder=<fmt:message key='email'/> required>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="inputLogin" class="col-md-3 control-label">Login</label>
+                    <label for="inputLogin" class="col-md-3 control-label"><fmt:message key='login'/></label>
                     <div class="col-md-9">
-                        <input type="text" class="form-control" name="login" id="inputLogin" placeholder="Login" required>
+                        <input type="text" class="form-control" name="login" id="inputLogin" placeholder=<fmt:message key='login'/> required>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="inputPassword" class="col-md-3 control-label">Password</label>
+                    <label for="inputPassword" class="col-md-3 control-label"><fmt:message key='password'/></label>
                     <div class="col-md-9">
-                        <input type="password" class="form-control" name="password" id="inputPassword" placeholder="Password" required>
+                        <input type="password" class="form-control" name="password" id="inputPassword" placeholder=<fmt:message key='password'/> required>
                     </div>
                 </div>
                 <div class="form-group">
                     <div class="col-md-offset-3 col-md-9">
-                        <button type="submit" class="btn btn-primary col-md-5">Submit</button>
+                        <button type="submit" class="btn btn-primary col-md-5"><fmt:message key='submit'/></button>
                     </div>
                 </div>
             </form>

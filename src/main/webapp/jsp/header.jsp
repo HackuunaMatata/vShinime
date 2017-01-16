@@ -22,9 +22,9 @@
 
         <c:if test="${user.getLogin() != null}">
             <ul class="nav navbar-nav">
-                <li><a href="profile">Profile</a></li>
-                <li><a href="friends">Friends</a></li>
-                <li><a href="logout">Exit</a></li>
+                <li><a href="profile"><fmt:message key='profile'/></a></li>
+                <li><a href="friends"><fmt:message key='colleagues'/></a></li>
+                <li><a href="logout"><fmt:message key='exit'/></a></li>
             </ul>
         </c:if>
         <ul class="nav navbar-nav navbar-right">

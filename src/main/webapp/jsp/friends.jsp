@@ -11,7 +11,7 @@
 
 <html>
 <head>
-    <title>Friends</title>
+    <title>Colleagues</title>
     <link rel="stylesheet" type="text/css" href="../styles/css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="../styles/css/mainPage.css">
 </head>
@@ -20,10 +20,10 @@
 <div class="table-friends">
     <table class="table table-striped">
         <tr>
-            <th>Name</th>
-            <th>Surname</th>
-            <th>Magazine</th>
-            <th>Actions</th>
+            <th><fmt:message key='name'/></th>
+            <th><fmt:message key='surname'/></th>
+            <th><fmt:message key='magazine'/></th>
+            <th><fmt:message key='actions'/></th>
         </tr>
         <c:forEach var="friend" items="${friends}">
             <tr>
@@ -31,8 +31,8 @@
                 <td>${friend.getSurname()}</td>
                 <td>${friend.getMagazine()}</td>
                 <td>
-                    <a class="btn btn-info" href="">Send Message</a>
-                    <a class="btn btn-warning" href="guest?id=${friend.getId()}">Show Profile</a>
+                    <a class="btn btn-info" href=""><fmt:message key='sendMessage'/></a>
+                    <a class="btn btn-warning" href="guest?id=${friend.getId()}"><fmt:message key='showProfile'/></a>
                 </td>
             </tr>
         </c:forEach>
