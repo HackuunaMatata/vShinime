@@ -27,13 +27,13 @@
     </div>
     <div class="col-sm-6 col-md-8 info big-text">
         <h2>${userInfo.getName()} ${userInfo.getSurname()}</h2>
-        <small><cite title="job">${userInfo.getMagazine()}, ${position} <i class="glyphicon glyphicon-gift">
+        <small><cite title="job">${userInfo.getMagazine()}, ${position} <i class="glyphicon glyphicon-pencil">
         </i></cite></small>
         <p>
             <i class="glyphicon glyphicon-envelope"></i>${user.getEmail()}
             <br/>
             <% String date = new SimpleDateFormat("dd MMMMM, yyyy").format(userInfo.getBday()); %>
-            <i class="glyphicon glyphicon-text-color"></i><%=date%>
+            <i class="glyphicon glyphicon-user"></i><%=date%>
             <br/>
         </p>
     </div>
@@ -44,7 +44,7 @@
             <div class="thumbnail">
                 <div class="caption">
                     <h3>${article.getTitle()}</h3>
-                    <small><cite title="date">${article.getDate()}<i class="glyphicon glyphicon-gift">
+                    <small><cite title="date">${article.getDate()}<i class="glyphicon glyphicon-file">
                     </i></cite></small>
                     <p>${article.getAnnotation()}</p>
                     <div>

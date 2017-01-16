@@ -55,4 +55,16 @@ public class MySQLMessagesDAO  extends MySQLDAO implements MessagesDAO {
         }
         return -1;
     }
+
+    public int countAllUnreadMessages(int id_to) {
+        ResultSet resultSet = count("messages",
+                "id_to='" + id_to + "' AND NOT `read`");
+        try {
+            resultSet.next();
+            return resultSet.getInt(1);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return -1;
+    }
 }

@@ -13,4 +13,5 @@ public interface MessagesDAO {
     public List<Messages> getMessages(int id_from, int id_to);
     public void readMessages(int id_from, int id_to);
     public int countUnreadMessages(int id_from, int id_to);
+    public int countAllUnreadMessages(int id_to);
 }
