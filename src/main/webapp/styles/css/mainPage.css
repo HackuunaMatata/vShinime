@@ -4,20 +4,30 @@
 }
 
 body {
+    margin-top: 75px;
     font-family: vShinime, Arial, sans-serif;
 }
+
 .shinima-header {
+    z-index: 999;
+    left: 0;
+    top: 0;
+    right: 0;
+    position: fixed;
     padding: 8px 100px;
     background-color: #505050;
     font-size: 1.2em;
 }
+
 .navbar-brand {
     font-size: 1.3em;
 }
+
 .shinima-input-file {
     margin-top: 12px;
     color: white;
 }
+
 .shinima-select {
     margin-top: 10px;
     color: black;
@@ -87,4 +97,33 @@ small {
 
 .second-column-form {
     border-left: solid #ddd 2px;
+}
+
+.message-bubble {
+    padding: 10px;
+}
+
+.message-bubble .text-muted {
+    color: inherit;
+}
+
+.message-bubble-light {
+    color: black;
+    background-color: #F5F5F5;
+}
+
+.message-bubble-dark {
+    color: #ddd;
+}
+
+.message-bubble > * {
+    padding-left: 10px;
+}
+
+.panel-body {
+    padding: 0;
+}
+
+.panel-footer form {
+    margin: 0;
 }

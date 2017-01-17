@@ -26,11 +26,11 @@
                     <small>${message.getDate()} <i class="glyphicon glyphicon-time"></i></small>
                 </div>
             </div>
-            <div class="panel-body" style="padding: 10px 0; background-color: #ddd; color:black;">
+            <a href="dialog?id=${message.getColleagueId()}"><div class="panel-body" style="padding: 10px 0; background-color: #ddd; color:black;">
                 <div class="col-md-1"><small>${message.getFrom()}</small></div>
                 <div class="col-md-10" style="height: 3em; overflow: hidden;">${message.getMessage()}</div>
                 <div class="col-md-1"><span class="label label-primary badge">${message.getCountUnreaded()}</span></div>
-            </div>
+            </div></a>
         </div>
     </c:forEach>
 </div>

@@ -16,4 +16,5 @@ public interface MessagesDAO {
     public int countUnreadMessages(int id_from, int id_to);
     public int countAllUnreadMessages(int id_to);
     public HashMap<Integer, Messages> getLastMessagesForUser(int id_user);
+    public List<Messages> getLastNMessages(int id_user, int id_guest, int n);
 }

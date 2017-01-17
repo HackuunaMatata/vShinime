@@ -6,10 +6,7 @@ import entities.Messages;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Timestamp;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * Created by HackuunaMatata on 13.01.2017.
@@ -86,6 +83,17 @@ public class MySQLMessagesDAO extends MySQLDAO implements MessagesDAO {
 
         }
         return messages;
+    }
+
+    public List<Messages> getLastNMessages(int id_user, int id_guest, int n) {
+        List<Messages> input = getMessages(id_guest, id_user);
+        List<Messages> output = getMessages(id_user, id_guest);
+        input.addAll(output);
+
+        input.sort(Comparator.comparing(Messages::getDatetime));
+
+        if (input.size() > n) return input.subList(input.size() - n, input.size());
+        else return input;
     }
 
     private List<Messages> getListFromResultSet(ResultSet resultSet) {

@@ -35,7 +35,6 @@ public class EditProfileServlet extends HttpServlet {
         int id = user.getId();
 
         MySQLDAO dao = DAOFactory.getInstanceMySQL();
-        PositionsDAO positionsDAO = dao.getPositionsDAO();
         UserInfoDAO userInfoDAO = dao.getUserInfoDAO();
         UsersDAO usersDAO = dao.getUsersDAO();
 
