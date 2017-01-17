@@ -36,6 +36,7 @@ public class LoginFilter implements Filter {
         if (user == null) {
             user = new Users(-1, null, null, null);
             session.setAttribute("user", user);
+            session.setAttribute("messages", 0);
         }
 
 

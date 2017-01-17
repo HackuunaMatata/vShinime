@@ -5,6 +5,7 @@ package servlets;
  */
 
 import DAO.DAOFactory;
+import DAO.MessagesDAO;
 import DAO.MySQL.MySQLDAO;
 import DAO.UsersDAO;
 import entities.Users;
@@ -30,6 +31,8 @@ public class LoginServlet extends HttpServlet {
 
         MySQLDAO dao = DAOFactory.getInstanceMySQL();
         UsersDAO usersDAO = dao.getUsersDAO();
+        MessagesDAO messagesDAO = dao.getMessagesDAO();
+
         try {
             if (login.equals("") || password.equals("")) throw new Error("Incorrect");
             int id = usersDAO.getIdByLogin(login);
@@ -39,6 +42,7 @@ public class LoginServlet extends HttpServlet {
             if (!user.getPassword().equals(password)) throw new Error("Incorrect login or password");
 
             request.getSession().setAttribute("user", user);
+            request.getSession().setAttribute("messages", messagesDAO.countAllUnreadMessages(id));
 
             response.sendRedirect("/profile");
         } catch (Error e) {

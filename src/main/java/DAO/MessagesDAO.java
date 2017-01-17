@@ -3,6 +3,7 @@ package DAO;
 
 import entities.Messages;
 
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -14,4 +15,5 @@ public interface MessagesDAO {
     public void readMessages(int id_from, int id_to);
     public int countUnreadMessages(int id_from, int id_to);
     public int countAllUnreadMessages(int id_to);
+    public HashMap<Integer, Messages> getLastMessagesForUser(int id_user);
 }

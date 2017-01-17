@@ -7,6 +7,7 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <jsp:useBean id="user" scope="session" type="entities.Users"/>
+<jsp:useBean id="messages" scope="session" type="java.lang.Integer"/>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
 <header class="navbar navbar-default shinima-header">
@@ -25,7 +26,7 @@
                 <li><a href="profile"><fmt:message key='profile'/></a></li>
                 <li><a href="friends"><fmt:message key='colleagues'/></a></li>
                 <li><a href="editProfile">Edit</a></li>
-                <li><a href="messages">Messages</a></li>
+                <li><a href="messages">Messages (${messages})</a></li>
                 <li><a href="logout"><fmt:message key='exit'/></a></li>
             </ul>
         </c:if>
