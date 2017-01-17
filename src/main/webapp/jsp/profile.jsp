@@ -48,7 +48,7 @@
                     </i></cite></small>
                     <p>${article.getAnnotation()}</p>
                     <div>
-                        <a href="#" class="btn btn-info" role="button"><fmt:message key='editInformation'/></a>
+                        <a href="editArticles?title=${article.getTitle()}" class="btn btn-info" role="button"><fmt:message key='editInformation'/></a>
                         <a href="deleteArticle?id=${article.getUserId()}&title=${article.getTitle()}" class="btn btn-primary pull-right" role="button"><fmt:message key='deleteArticle'/></a>
                     </div>
                 </div>

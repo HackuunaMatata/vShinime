@@ -14,4 +14,5 @@ public interface ArticlesDAO {
     public void updateArticleForUser(String newAnnotation, Date newDate, int userId, String title);
     public void deleteArticleForUser(String title, int userId);
     public void deleteAllArticlesForUser(int userId);
+    public Articles getArticleForUserByTitle(int userId, String title);
 }

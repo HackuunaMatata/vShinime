@@ -38,6 +38,22 @@ public class MySQLArticlesDAO extends MySQLDAO implements ArticlesDAO {
         return null;
     }
 
+    public Articles getArticleForUserByTitle(int userId, String title) {
+        ResultSet resultSet;
+        resultSet = select("articles", "user_id='" + userId + "' AND title='" + title + "'");
+        try {
+            resultSet.next();
+            Articles article = new Articles(resultSet.getInt("user_id"),
+                    resultSet.getString("title"),
+                    resultSet.getString("annotation"),
+                    resultSet.getDate("date"));
+            return article;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
     public void updateArticleForUser(String newAnnotation, Date newDate, int userId, String title) {
         String set;
         String setAnnotation = newAnnotation == null ? "annotation=''" : "annotation='" + newAnnotation + "'";
