@@ -30,10 +30,10 @@
         <small><cite title="job">${userInfo.getMagazine()}, ${position} <i class="glyphicon glyphicon-folder-close">
         </i></cite></small>
         <p>
-            <i class="glyphicon glyphicon-envelope"></i>${friend.getEmail()}
+            <i class="glyphicon glyphicon-envelope"></i> ${friend.getEmail()}
             <br/>
             <% String date = new SimpleDateFormat("dd MMMMM, yyyy").format(userInfo.getBday()); %>
-            <i class="glyphicon glyphicon-gift"></i><%=date%>
+            <i class="glyphicon glyphicon-gift"></i> <%=date%>
             <br/>
         </p>
     </div>

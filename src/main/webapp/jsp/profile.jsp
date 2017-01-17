@@ -30,10 +30,10 @@
         <small><cite title="job">${userInfo.getMagazine()}, ${position} <i class="glyphicon glyphicon-folder-close">
         </i></cite></small>
         <p>
-            <i class="glyphicon glyphicon-envelope"></i>${user.getEmail()}
+            <i class="glyphicon glyphicon-envelope"></i> ${user.getEmail()}
             <br/>
             <% String date = new SimpleDateFormat("dd MMMMM, yyyy").format(userInfo.getBday()); %>
-            <i class="glyphicon glyphicon-gift"></i><%=date%>
+            <i class="glyphicon glyphicon-gift"></i> <%=date%>
             <br/>
         </p>
     </div>
@@ -58,7 +58,9 @@
     <div class="col-sm-6 col-md-4">
         <div class="thumbnail">
             <div class="caption add-article">
+                <a href="addArticles" role="button">
                 <img height="150" width="150" src="../images/add_article.png"/>
+                </a>
             </div>
         </div>
     </div>

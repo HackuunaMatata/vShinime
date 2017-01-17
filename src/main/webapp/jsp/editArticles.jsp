@@ -30,7 +30,11 @@
                     <div class="input-group-addon">
                         <i class="glyphicon glyphicon-user"></i>
                     </div>
-                    <input id="title" name="title" type="text" placeholder="Title" class="form-control input-md"
+                    <c:if test="${!article.getTitle().equals(\"\")}">
+                        <input id="title" name="title" type="hidden" placeholder="Title" class="form-control input-md"
+                        value="${article.getTitle()}">
+                    </c:if>
+                    <input id="newTitle" name="newTitle" type="text" placeholder="Title" class="form-control input-md"
                            value="${article.getTitle()}"
                             <c:if test="${!article.getTitle().equals(\"\")}"> disabled </c:if> required/>
                 </div>

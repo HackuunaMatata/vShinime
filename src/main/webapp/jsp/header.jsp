@@ -25,6 +25,7 @@
                 <li><a href="profile"><fmt:message key='profile'/></a></li>
                 <li><a href="friends"><fmt:message key='colleagues'/></a></li>
                 <li><a href="editProfile">Edit</a></li>
+                <li><a href="messages">Messages</a></li>
                 <li><a href="logout"><fmt:message key='exit'/></a></li>
             </ul>
         </c:if>
