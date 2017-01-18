@@ -20,6 +20,7 @@ import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Locale;
 
 /**
  * Created by HackuunaMatata on 17.01.2017.
@@ -53,7 +54,8 @@ public class MessagesServlet extends HttpServlet {
         for (Integer integer : lastMessages.keySet()) {
             Messages message = lastMessages.get(integer);
             fromId = message.getId_from();
-            from = fromId == id ? "You: " : ""; //TODO "you"
+            String writer = session.getAttribute("locale").equals(Locale.US) ? "You: " : "Вы: ";
+            from = fromId == id ? writer : "";
             colleague = userInfoDAO.getUserInfoById(integer).getName() + " " + userInfoDAO.getUserInfoById(integer).getSurname();
             messageText = message.getText();
             date = message.getDatetime();

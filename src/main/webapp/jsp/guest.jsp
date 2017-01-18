@@ -12,6 +12,7 @@
 <jsp:useBean id="userInfo" scope="request" type="entities.UserInfo"/>
 <jsp:useBean id="position" scope="request" type="java.lang.String"/>
 <jsp:useBean id="articles" scope="request" type="java.util.List"/>
+<jsp:useBean id="locale" scope="session" type="java.util.Locale"/>
 
 <html>
 <head>
@@ -32,12 +33,13 @@
         <p>
             <i class="glyphicon glyphicon-envelope"></i> ${friend.getEmail()}
             <br/>
-            <% String date = new SimpleDateFormat("dd MMMMM, yyyy").format(userInfo.getBday()); %>
+            <% String date = new SimpleDateFormat("dd MMMMM, yyyy", locale).format(userInfo.getBday()); %>
             <i class="glyphicon glyphicon-gift"></i> <%=date%>
             <br/>
+            <br/>
+            <a class="btn btn-info" href="dialog?id=${friend.getId()}"><fmt:message key='sendMessage'/></a>
         </p>
     </div>
-    <a class="btn btn-info" href="dialog?id=${friend.getId()}"><fmt:message key='sendMessage'/></a>
 </div>
 <div class="row articles">
     <c:forEach var="article" items="${articles}">

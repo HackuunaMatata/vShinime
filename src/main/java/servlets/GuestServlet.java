@@ -1,7 +1,6 @@
 package servlets;
 
 import DAO.*;
-import DAO.MySQL.MySQLDAO;
 import entities.Articles;
 import entities.UserInfo;
 import entities.Users;

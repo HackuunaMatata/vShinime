@@ -1,4 +1,5 @@
 <%@ page import="java.text.SimpleDateFormat" %>
+<%@ page import="java.util.Locale" %>
 <%--
   Created by IntelliJ IDEA.
   User: HackuunaMatata
@@ -12,6 +13,7 @@
 <jsp:useBean id="userInfo" scope="request" type="entities.UserInfo"/>
 <jsp:useBean id="position" scope="request" type="java.lang.String"/>
 <jsp:useBean id="articles" scope="request" type="java.util.List"/>
+<jsp:useBean id="locale" scope="session" type="java.util.Locale"/>
 
 <html>
 <head>
@@ -32,7 +34,7 @@
         <p>
             <i class="glyphicon glyphicon-envelope"></i> ${user.getEmail()}
             <br/>
-            <% String date = new SimpleDateFormat("dd MMMMM, yyyy").format(userInfo.getBday()); %>
+            <% String date = new SimpleDateFormat("dd MMMMM, yyyy", locale).format(userInfo.getBday()); %>
             <i class="glyphicon glyphicon-gift"></i> <%=date%>
             <br/>
         </p>

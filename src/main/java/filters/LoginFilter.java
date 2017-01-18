@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.util.Locale;
 
 /**
  * Created by HackuunaMatata on 15.01.2017.
@@ -35,6 +36,7 @@ public class LoginFilter implements Filter {
         System.out.println(user);
         if (user == null) {
             user = new Users(-1, null, null, null);
+            session.setAttribute("locale", new Locale("ru", "RU"));
             session.setAttribute("user", user);
             session.setAttribute("messages", 0);
         }
