@@ -22,31 +22,31 @@
 <div class="col-md-offset-2 col-md-8">
     <form class="form-horizontal common-label" action="editProfile" method="post" enctype="multipart/form-data">
         <div class="form-group">
-            <label class="col-md-4 control-label" for="name">Name</label>
+            <label class="col-md-4 control-label" for="name"><fmt:message key='name'/></label>
             <div class="col-md-6">
                 <div class="input-group">
                     <div class="input-group-addon">
                         <i class="glyphicon glyphicon-user"></i>
                     </div>
-                    <input id="name" name="name" type="text" placeholder="Name" class="form-control input-md"
+                    <input id="name" name="name" type="text" placeholder="<fmt:message key='name'/>" class="form-control input-md"
                      value="${userInfo.getName()}" required/>
                 </div>
             </div>
         </div>
         <div class="form-group">
-            <label class="col-md-4 control-label" for="surname">Surname</label>
+            <label class="col-md-4 control-label" for="surname"><fmt:message key='surname'/></label>
             <div class="col-md-6">
                 <div class="input-group">
                     <div class="input-group-addon">
                         <i class="glyphicon glyphicon-user"></i>
                     </div>
-                    <input id="surname" name="surname" type="text" placeholder="Surname" class="form-control input-md"
+                    <input id="surname" name="surname" type="text" placeholder="<fmt:message key='surname'/>" class="form-control input-md"
                     value="${userInfo.getSurname()}" required/>
                 </div>
             </div>
         </div>
         <div class="form-group">
-            <label class="col-md-4 control-label" for="bday">Bday</label>
+            <label class="col-md-4 control-label" for="bday"><fmt:message key='birthday'/></label>
             <div class="col-md-6">
                 <div class="input-group">
                     <div class="input-group-addon">
@@ -59,19 +59,19 @@
             </div>
         </div>
         <div class="form-group">
-            <label class="col-md-4 control-label" for="magazine">Magazine</label>
+            <label class="col-md-4 control-label" for="magazine"><fmt:message key='magazine'/></label>
             <div class="col-md-6">
                 <div class="input-group">
                     <div class="input-group-addon">
                         <i class="glyphicon glyphicon-user"></i>
                     </div>
-                    <input id="magazine" name="magazine" type="text" placeholder="Magazine" class="form-control input-md"
+                    <input id="magazine" name="magazine" type="text" placeholder="<fmt:message key='magazine'/>" class="form-control input-md"
                     value="${userInfo.getMagazine()}"/>
                 </div>
             </div>
         </div>
         <div class="form-group">
-            <label class="col-md-4 control-label" for="position">Position</label>
+            <label class="col-md-4 control-label" for="position"><fmt:message key='position'/></label>
             <div class="col-md-6">
                 <select id="position" name="position" class="input-xlarge shinima-select">
                     <option
@@ -87,7 +87,7 @@
         </div>
         <!-- File Button -->
         <div class="form-group">
-            <label class="col-md-4 control-label" for="photo">Upload photo</label>
+            <label class="col-md-4 control-label" for="photo"><fmt:message key='uploadPhoto'/></label>
             <div class="col-md-6">
                 <input id="photo" name="photo" class="input-file shinima-input-file" type="file">
             </div>
@@ -95,32 +95,32 @@
         <hr/>
         <%--------------%>
         <div class="form-group">
-            <label class="col-md-4 control-label" for="email">Email</label>
+            <label class="col-md-4 control-label" for="email"><fmt:message key='email'/></label>
             <div class="col-md-6">
                 <div class="input-group">
                     <div class="input-group-addon">
                         <i class="glyphicon glyphicon-user"></i>
                     </div>
-                    <input id="email" name="email" type="email" placeholder="Email" class="form-control input-md"
+                    <input id="email" name="email" type="email" placeholder="<fmt:message key='email'/>" class="form-control input-md"
                     value="${user.getEmail()}" required/>
                 </div>
             </div>
         </div>
         <div class="form-group">
-            <label class="col-md-4 control-label" for="password">New Password</label>
+            <label class="col-md-4 control-label" for="password"><fmt:message key='newPassword'/></label>
             <div class="col-md-6">
                 <div class="input-group">
                     <div class="input-group-addon">
                         <i class="glyphicon glyphicon-user"></i>
                     </div>
-                    <input id="password" name="password" type="password" placeholder="Password" class="form-control input-md"/>
+                    <input id="password" name="password" type="password" placeholder="<fmt:message key='newPassword'/>" class="form-control input-md"/>
                 </div>
             </div>
         </div>
         <div class="form-group">
             <label class="col-md-4 control-label"></label>
             <div class="col-md-6">
-                <button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-thumbs-up"></span> Submit</button>
+                <button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-thumbs-up"></span> <fmt:message key='submit'/></button>
             </div>
         </div>
     </form>

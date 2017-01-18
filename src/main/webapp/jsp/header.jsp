@@ -25,8 +25,8 @@
             <ul class="nav navbar-nav">
                 <li><a href="profile"><fmt:message key='profile'/></a></li>
                 <li><a href="friends"><fmt:message key='colleagues'/></a></li>
-                <li><a href="editProfile">Edit</a></li>
-                <li><a href="messages">Messages (${messages})</a></li>
+                <li><a href="editProfile"><fmt:message key='edit'/></a></li>
+                <li><a href="messages"><fmt:message key='messages'/> (${messages})</a></li>
                 <li><a href="logout"><fmt:message key='exit'/></a></li>
             </ul>
         </c:if>

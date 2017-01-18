@@ -31,7 +31,7 @@
                 <td>${friend.getSurname()}</td>
                 <td>${friend.getMagazine()}</td>
                 <td>
-                    <a class="btn btn-info" href=""><fmt:message key='sendMessage'/></a>
+                    <a class="btn btn-info" href="dialog?id=${friend.getId()}"><fmt:message key='sendMessage'/></a>
                     <a class="btn btn-warning" href="guest?id=${friend.getId()}"><fmt:message key='showProfile'/></a>
                 </td>
             </tr>

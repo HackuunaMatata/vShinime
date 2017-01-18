@@ -1,3 +1,4 @@
+<%@ page import="java.text.SimpleDateFormat" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
@@ -23,6 +24,7 @@
             <div class="panel-title" style="padding: 10px 0; height: 50px;">
                 <div class="col-md-offset-1 col-md-7">${message.getColleague()}</div>
                 <div class="col-md-4" style="padding-top: 5px;">
+                    <%--<% String date = new SimpleDateFormat("dd MMMMM, yyyy").format(userInfo.getBday()); %>--%>
                     <small>${message.getDate()} <i class="glyphicon glyphicon-time"></i></small>
                 </div>
             </div>

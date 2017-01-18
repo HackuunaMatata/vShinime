@@ -37,6 +37,7 @@
             <br/>
         </p>
     </div>
+    <a class="btn btn-info" href="dialog?id=${friend.getId()}"><fmt:message key='sendMessage'/></a>
 </div>
 <div class="row articles">
     <c:forEach var="article" items="${articles}">
