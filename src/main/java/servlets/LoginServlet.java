@@ -6,9 +6,9 @@ package servlets;
 
 import DAO.DAOFactory;
 import DAO.MessagesDAO;
-import DAO.MySQL.MySQLDAO;
 import DAO.UsersDAO;
 import entities.Users;
+import utils.HashPassword;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -27,7 +27,7 @@ public class LoginServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String login = request.getParameter("login");
         String password = request.getParameter("password");
-
+        password = HashPassword.getMD5Hash(password);
 
         DAOFactory dao = DAOFactory.getInstanceDAO();
         UsersDAO usersDAO = dao.getUsersDAO();

@@ -4,6 +4,7 @@ import DAO.DAOFactory;
 import DAO.MySQL.MySQLDAO;
 import DAO.UserInfoDAO;
 import DAO.UsersDAO;
+import utils.HashPassword;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -37,6 +38,9 @@ public class RegistrationServlet extends HttpServlet {
             if(name.equals("") || surname.equals("") || email.equals("") || login.equals("") || password.equals(""))
                 throw new Error("Incorrect");
             if (usersDAO.getIdByLogin(login) != -1) throw new Error("Login already exist");
+
+            password = HashPassword.getMD5Hash(password);
+
             int id = usersDAO.addUser(login, password, email);
             userInfoDAO.addUserInfo(id, name, surname, -1, new Date(System.currentTimeMillis()), null, null);
             response.sendRedirect("/");

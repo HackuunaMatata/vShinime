@@ -9,6 +9,7 @@ import entities.Positions;
 import entities.UserInfo;
 import entities.Users;
 import org.apache.log4j.Logger;
+import utils.HashPassword;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
@@ -59,6 +60,7 @@ public class EditProfileServlet extends HttpServlet {
         String email = request.getParameter("email");
         String password = request.getParameter("password");
         if (password.equals("")) password = user.getPassword();
+        else password = HashPassword.getMD5Hash(password);
 
         userInfoDAO.updateUserInfo(name, surname, bday, position, magazine, photo, id);
         usersDAO.updateUser(password, email, id);

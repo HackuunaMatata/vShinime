@@ -3,6 +3,8 @@ import DAO.MySQL.MySQLDAO;
 import entities.Articles;
 
 import java.io.File;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.sql.Date;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
