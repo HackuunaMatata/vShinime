@@ -31,7 +31,7 @@ public class MessagesServlet extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        MySQLDAO dao = DAOFactory.getInstanceMySQL();
+        DAOFactory dao = DAOFactory.getInstanceDAO();
         MessagesDAO messagesDAO = dao.getMessagesDAO();
         UserInfoDAO userInfoDAO = dao.getUserInfoDAO();
 

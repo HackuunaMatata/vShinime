@@ -2,6 +2,7 @@ import DAO.*;
 import DAO.MySQL.MySQLDAO;
 import entities.Articles;
 
+import java.io.File;
 import java.sql.Date;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
@@ -15,7 +16,7 @@ public class Main {
 
         System.out.println("Hello");
 
-        MySQLDAO sql = DAOFactory.getInstanceMySQL();
+        DAOFactory sql = DAOFactory.getInstanceDAO();
         UsersDAO usersDAO = sql.getUsersDAO();
         //usersDAO.addUser("sasha", "sasha", "sasha");
         //System.out.println(usersDAO.getTable());

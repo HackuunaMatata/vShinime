@@ -30,7 +30,7 @@ public class EditArticlesServlet extends HttpServlet {
         Users user = (Users) session.getAttribute("user");
         int id = user.getId();
 
-        MySQLDAO dao = DAOFactory.getInstanceMySQL();
+        DAOFactory dao = DAOFactory.getInstanceDAO();
         ArticlesDAO articlesDAO = dao.getArticlesDAO();
 
         String title = request.getParameter("title");
@@ -48,7 +48,7 @@ public class EditArticlesServlet extends HttpServlet {
         int id = user.getId();
         String title = request.getParameter("title");
 
-        MySQLDAO dao = DAOFactory.getInstanceMySQL();
+        DAOFactory dao = DAOFactory.getInstanceDAO();
         ArticlesDAO articlesDAO = dao.getArticlesDAO();
         Articles article = articlesDAO.getArticleForUserByTitle(id, title);
 

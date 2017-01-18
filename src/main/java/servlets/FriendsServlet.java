@@ -31,7 +31,7 @@ public class FriendsServlet extends HttpServlet {
         Users user = (Users) session.getAttribute("user");
         int id = user.getId();
 
-        MySQLDAO dao = DAOFactory.getInstanceMySQL();
+        DAOFactory dao = DAOFactory.getInstanceDAO();
         UserInfoDAO userInfoDAO = dao.getUserInfoDAO();
         UserInfo userInfo = userInfoDAO.getUserInfoById(id);
 

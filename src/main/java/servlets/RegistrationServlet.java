@@ -29,7 +29,7 @@ public class RegistrationServlet extends HttpServlet {
         String login = request.getParameter("login");
         String password = request.getParameter("password");
 
-        MySQLDAO dao = DAOFactory.getInstanceMySQL();
+        DAOFactory dao = DAOFactory.getInstanceDAO();
         UsersDAO usersDAO = dao.getUsersDAO();
         UserInfoDAO userInfoDAO = dao.getUserInfoDAO();
 

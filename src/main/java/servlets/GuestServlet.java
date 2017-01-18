@@ -26,7 +26,7 @@ public class GuestServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         int id = Integer.parseInt(request.getParameter("id"));
 
-        MySQLDAO dao = DAOFactory.getInstanceMySQL();
+        DAOFactory dao = DAOFactory.getInstanceDAO();
         UserInfoDAO userInfoDAO = dao.getUserInfoDAO();
         UsersDAO usersDAO = dao.getUsersDAO();
         PositionsDAO positionsDAO = dao.getPositionsDAO();

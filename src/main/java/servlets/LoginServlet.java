@@ -29,7 +29,7 @@ public class LoginServlet extends HttpServlet {
         String password = request.getParameter("password");
 
 
-        MySQLDAO dao = DAOFactory.getInstanceMySQL();
+        DAOFactory dao = DAOFactory.getInstanceDAO();
         UsersDAO usersDAO = dao.getUsersDAO();
         MessagesDAO messagesDAO = dao.getMessagesDAO();
 

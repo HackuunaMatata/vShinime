@@ -3,10 +3,13 @@ package DAO.MySQL;
 import DAO.*;
 import org.apache.log4j.Logger;
 
+import java.io.FileInputStream;
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.Properties;
 
 /**
  * Created by HackuunaMatata on 11.01.2017.
@@ -14,16 +17,26 @@ import java.sql.Statement;
 public class MySQLDAO extends DAOFactory {
     private static final Logger log = Logger.getLogger(MySQLDAO.class);
 
-    private final static String DRIVER = "com.mysql.jdbc.Driver";
-    private final static String URL = "jdbc:mysql://localhost:3306/vShinime";
-    private final static String USERNAME = "root";
-    private final static String PASSWORD = "root";
-
     private static ConnectionPool connectionPool = null;
 
     public MySQLDAO() {
-        if (connectionPool == null)
-            connectionPool = new ConnectionPool(DRIVER, URL, USERNAME, PASSWORD);
+        if (connectionPool == null) {
+            FileInputStream fis;
+            Properties property = new Properties();
+
+            try {
+                fis = new FileInputStream("C:\\Users\\Vesdet\\IdeaProjects\\vShinime\\src\\main\\resources\\config.properties");
+                property.load(fis);
+
+                String DRIVER = property.getProperty("mysql.DRIVER");
+                String URL = property.getProperty("mysql.URL");
+                String USERNAME = property.getProperty("mysql.USERNAME");
+                String PASSWORD = property.getProperty("mysql.PASSWORD");
+                connectionPool = new ConnectionPool(DRIVER, URL, USERNAME, PASSWORD);
+            } catch (IOException e) {
+                log.error("Error: file of properties is absent!");
+            }
+        }
     }
 
     protected void insert(String table, String value) {

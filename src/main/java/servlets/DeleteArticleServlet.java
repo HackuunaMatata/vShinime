@@ -24,7 +24,7 @@ public class DeleteArticleServlet extends HttpServlet {
         int id = Integer.parseInt(request.getParameter("id"));
         String title = request.getParameter("title");
 
-        MySQLDAO dao = DAOFactory.getInstanceMySQL();
+        DAOFactory dao = DAOFactory.getInstanceDAO();
         ArticlesDAO article = dao.getArticlesDAO();
 
         article.deleteArticleForUser(title, id);
