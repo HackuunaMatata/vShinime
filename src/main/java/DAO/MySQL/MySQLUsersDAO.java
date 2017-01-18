@@ -2,6 +2,7 @@ package DAO.MySQL;
 
 import DAO.UsersDAO;
 import entities.Users;
+import org.apache.log4j.Logger;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -12,6 +13,7 @@ import java.util.List;
  * Created by HackuunaMatata on 11.01.2017.
  */
 public class MySQLUsersDAO extends MySQLDAO implements UsersDAO {
+    private static final Logger log = Logger.getLogger(MySQLUsersDAO.class);
 
     public int addUser(String login, String password, String email) {
         insert("users (`login`, `password`, `email`)", "'" + login + "', '" + password + "', '" + email + "'");
@@ -31,7 +33,7 @@ public class MySQLUsersDAO extends MySQLDAO implements UsersDAO {
             }
             return users;
         } catch (SQLException e) {
-            e.printStackTrace();
+            log.error("getTable: ", e);
         }
         return null;
     }
@@ -42,8 +44,7 @@ public class MySQLUsersDAO extends MySQLDAO implements UsersDAO {
             resultSet.next();
             return resultSet.getInt("id");
         } catch (SQLException e) {
-            System.err.println("Incorrect login");
-//            e.printStackTrace();
+            log.error("getIdByLogin: ", e);
         }
         return -1;
     }
@@ -58,7 +59,7 @@ public class MySQLUsersDAO extends MySQLDAO implements UsersDAO {
                     resultSet.getString("email"));
             return user;
         } catch (SQLException e) {
-            e.printStackTrace();
+            log.error("getUserById: ", e);
         }
         return null;
     }

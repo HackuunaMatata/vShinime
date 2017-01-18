@@ -2,6 +2,7 @@ package DAO.MySQL;
 
 import DAO.UserInfoDAO;
 import entities.UserInfo;
+import org.apache.log4j.Logger;
 
 import java.sql.Date;
 import java.sql.ResultSet;
@@ -13,6 +14,8 @@ import java.util.List;
  * Created by HackuunaMatata on 11.01.2017.
  */
 public class MySQLUserInfoDAO extends MySQLDAO implements UserInfoDAO {
+    private static final Logger log = Logger.getLogger(MySQLUserInfoDAO.class);
+
 
     public void addUserInfo(int id, String name, String surname, int positionId, Date bday, String magazine, String photo) {
         insert("userinfo (`id`, `name`, `surname`, `position_id`, `bday`, `magazine`, `photo`)",
@@ -37,7 +40,7 @@ public class MySQLUserInfoDAO extends MySQLDAO implements UserInfoDAO {
                     resultSet.getString("photo"));
             return info;
         } catch (SQLException e) {
-            e.printStackTrace();
+            log.error("getUserInfoById: ", e);
         }
         return null;
     }
@@ -75,7 +78,7 @@ public class MySQLUserInfoDAO extends MySQLDAO implements UserInfoDAO {
             }
             return userInfo;
         } catch (SQLException e) {
-            e.printStackTrace();
+            log.error("getListFromResultSet: ", e);
         }
         return null;
     }

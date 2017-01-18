@@ -2,6 +2,7 @@ package DAO.MySQL;
 
 import DAO.MessagesDAO;
 import entities.Messages;
+import org.apache.log4j.Logger;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -12,6 +13,7 @@ import java.util.*;
  * Created by HackuunaMatata on 13.01.2017.
  */
 public class MySQLMessagesDAO extends MySQLDAO implements MessagesDAO {
+    private static final Logger log = Logger.getLogger(MySQLMessagesDAO.class);
 
     public void addMessage(int id_from, int id_to, String text) {
         Timestamp datetime = new Timestamp(System.currentTimeMillis());
@@ -37,7 +39,7 @@ public class MySQLMessagesDAO extends MySQLDAO implements MessagesDAO {
             resultSet.next();
             return resultSet.getInt(1);
         } catch (SQLException e) {
-            e.printStackTrace();
+            log.error("countUnreadMessages: ", e);
         }
         return 0;
     }
@@ -49,7 +51,7 @@ public class MySQLMessagesDAO extends MySQLDAO implements MessagesDAO {
             resultSet.next();
             return resultSet.getInt(1);
         } catch (SQLException e) {
-            e.printStackTrace();
+            log.error("countAllUnreadMessages: ", e);
         }
         return 0;
     }
@@ -109,7 +111,7 @@ public class MySQLMessagesDAO extends MySQLDAO implements MessagesDAO {
             }
             return messages;
         } catch (SQLException e) {
-            e.printStackTrace();
+            log.error("getListFromResultSet: ", e);
         }
         return null;
     }

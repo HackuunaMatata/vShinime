@@ -2,6 +2,7 @@ package DAO.MySQL;
 
 import DAO.PositionsDAO;
 import entities.Positions;
+import org.apache.log4j.Logger;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -12,6 +13,7 @@ import java.util.List;
  * Created by HackuunaMatata on 12.01.2017.
  */
 public class MySQLPositionsDAO extends MySQLDAO implements PositionsDAO {
+    private static final Logger log = Logger.getLogger(MySQLPositionsDAO.class);
 
     public List<Positions> getTable() {
         List<Positions> positions = new ArrayList<>();
@@ -24,7 +26,7 @@ public class MySQLPositionsDAO extends MySQLDAO implements PositionsDAO {
             }
             return positions;
         } catch (SQLException e) {
-            e.printStackTrace();
+            log.error("getTable: ", e);
         }
         return null;
     }
@@ -37,7 +39,7 @@ public class MySQLPositionsDAO extends MySQLDAO implements PositionsDAO {
                     resultSet.getString("name"));
             return position;
         } catch (SQLException e) {
-            e.printStackTrace();
+            log.error("getPositionById: ", e);
         }
         return null;
     }

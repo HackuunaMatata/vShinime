@@ -53,15 +53,13 @@ public class MessagesServlet extends HttpServlet {
         for (Integer integer : lastMessages.keySet()) {
             Messages message = lastMessages.get(integer);
             fromId = message.getId_from();
-            from = fromId == id ? "You: " : "";
+            from = fromId == id ? "You: " : ""; //TODO "you"
             colleague = userInfoDAO.getUserInfoById(integer).getName() + " " + userInfoDAO.getUserInfoById(integer).getSurname();
             messageText = message.getText();
             date = message.getDatetime();
             countUnread = messagesDAO.countUnreadMessages(integer, id);
             messages.add(new LastMessage(from, colleague, integer, messageText, date, countUnread));
         }
-
-        System.out.println(messages);
 
         request.setAttribute("lastMessages", messages);
         request.getRequestDispatcher("/jsp/messages.jsp").forward(request, response);

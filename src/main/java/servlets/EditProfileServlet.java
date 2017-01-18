@@ -8,6 +8,7 @@ import DAO.UsersDAO;
 import entities.Positions;
 import entities.UserInfo;
 import entities.Users;
+import org.apache.log4j.Logger;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
@@ -29,6 +30,8 @@ import java.util.List;
 @WebServlet(name = "EditProfile", urlPatterns = "/editProfile")
 @MultipartConfig
 public class EditProfileServlet extends HttpServlet {
+    private static final Logger log = Logger.getLogger(EditProfileServlet.class);
+
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession();
         Users user = (Users) session.getAttribute("user");
@@ -90,8 +93,7 @@ public class EditProfileServlet extends HttpServlet {
         try {
             parsed = format.parse(date);
         } catch (ParseException e) {
-            e.printStackTrace();
-        }
+            log.error("getDateFromString: ", e);        }
         return new Date(parsed.getTime());
     }
 

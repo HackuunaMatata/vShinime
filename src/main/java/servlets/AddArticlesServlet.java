@@ -5,6 +5,7 @@ import DAO.DAOFactory;
 import DAO.MySQL.MySQLDAO;
 import entities.Articles;
 import entities.Users;
+import org.apache.log4j.Logger;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -22,6 +23,8 @@ import java.text.SimpleDateFormat;
  */
 @WebServlet(name = "AddArticles", urlPatterns = "/addArticles")
 public class AddArticlesServlet extends HttpServlet {
+    private static final Logger log = Logger.getLogger(AddArticlesServlet.class);
+
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession();
         Users user = (Users) session.getAttribute("user");
@@ -56,7 +59,7 @@ public class AddArticlesServlet extends HttpServlet {
         try {
             parsed = format.parse(date);
         } catch (ParseException e) {
-            e.printStackTrace();
+            log.error("getDateFromString: ", e);
         }
         return new Date(parsed.getTime());
     }

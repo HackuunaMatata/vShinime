@@ -2,6 +2,7 @@ package DAO.MySQL;
 
 import DAO.ArticlesDAO;
 import entities.Articles;
+import org.apache.log4j.Logger;
 
 import java.sql.Date;
 import java.sql.ResultSet;
@@ -13,6 +14,7 @@ import java.util.List;
  * Created by HackuunaMatata on 12.01.2017.
  */
 public class MySQLArticlesDAO extends MySQLDAO implements ArticlesDAO {
+    private static final Logger log = Logger.getLogger(MySQLArticlesDAO.class);
 
     public void addArticle(int userId, String title, String annotation, Date date) {
         insert("articles (`user_id`, `title`, `annotation`, `date`)", userId + ", '" + title + "', '" + annotation + "', '" + date + "'");
@@ -33,7 +35,7 @@ public class MySQLArticlesDAO extends MySQLDAO implements ArticlesDAO {
             }
             return articles;
         } catch (SQLException e) {
-            e.printStackTrace();
+            log.error("getArticlesByUserId: ", e);
         }
         return null;
     }
@@ -49,7 +51,7 @@ public class MySQLArticlesDAO extends MySQLDAO implements ArticlesDAO {
                     resultSet.getDate("date"));
             return article;
         } catch (SQLException e) {
-            e.printStackTrace();
+            log.error("getArticleForUserByTitle: ", e);
         }
         return null;
     }
