@@ -45,7 +45,7 @@
                     <form action="dialog" method="post">
                         <div class="input-group">
                             <input id="guestId" name="guestId" type="hidden" value="${guest.getId()}"/>
-                            <input id="text" name="text" type="text" class="form-control"/>
+                            <input id="text" name="text" type="text" class="form-control" required/>
                             <span class="input-group-btn">
                                 <button class="btn btn-default" type="submit"><fmt:message key='send'/></button>
                             </span>

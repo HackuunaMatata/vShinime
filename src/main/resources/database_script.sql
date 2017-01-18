@@ -47,45 +47,27 @@ CREATE TABLE users
 CREATE UNIQUE INDEX users_id_uindex ON users (id);
 CREATE UNIQUE INDEX users_login_uindex ON users (login);
 
-INSERT INTO `users` (`id`,`login`,`password`,`email`) VALUES (12,'admin','admin','Kozerog1996@yandex.ru');
+INSERT INTO `users` (`id`,`login`,`password`,`email`) VALUES (12,'admin','21232f297a57a5a743894a0e4a801fc3','Kozerog1996@yandex.ru');
+INSERT INTO `users` (`id`,`login`,`password`,`email`) VALUES (13,'Nikita','f8cf7194eb53f512b56990ef7a460a83','vesdet@gmail.com');
+INSERT INTO `users` (`id`,`login`,`password`,`email`) VALUES (14,'Dima','4085c6bd955d1445b1bd70ece5baf454','pxjoke@qmail.com');
+INSERT INTO `users` (`id`,`login`,`password`,`email`) VALUES (15,'Filipp','e9eee95c45922a5c1dce172f710ae400','filipp@makedonia.com');
 
-INSERT INTO `users` (`id`,`login`,`password`,`email`) VALUES (13,'Nikita','Nikita','vesdet@gmail.com');
+INSERT INTO `userinfo` (`id`,`name`,`surname`,`position_id`,`bday`,`magazine`,`photo`) VALUES (12,'РђР»РµРєСЃР°РЅРґСЂР°','РџР°РЅРєСЂР°С‚РѕРІР°',4,'1996-01-01','РџРѕР»РёС‚РµС…','null');
+INSERT INTO `userinfo` (`id`,`name`,`surname`,`position_id`,`bday`,`magazine`,`photo`) VALUES (13,'РќРёРєРёС‚Р°','Р С‹Р¶РѕРІ',5,'1995-06-27','EPAM','null');
+INSERT INTO `userinfo` (`id`,`name`,`surname`,`position_id`,`bday`,`magazine`,`photo`) VALUES (14,'Р”РјРёС‚СЂРёР№','Р“СЂСѓР·РґРµРІ',3,'1995-04-23','EPAM','null');
+INSERT INTO `userinfo` (`id`,`name`,`surname`,`position_id`,`bday`,`magazine`,`photo`) VALUES (15,'Р¤РёР»РёРїРї','РњР°РєРµРґРѕРЅСЃРєРёР№',2,'1996-02-27','Р•РљР‘','null');
 
-INSERT INTO `users` (`id`,`login`,`password`,`email`) VALUES (14,'Dima','Dima','pxjoke@qmail.com');
+INSERT INTO `positions` (`id`,`name`) VALUES (2,'Р“Р»Р°РІР° РїСЂР°РІР»РµРЅРёСЏ');
+INSERT INTO `positions` (`id`,`name`) VALUES (3,'Р–СѓСЂРЅР°Р»РёСЃС‚');
+INSERT INTO `positions` (`id`,`name`) VALUES (5,'Р–СѓСЂРЅР°Р»РёСЃС‚ Рё Р“Р»Р°РІР° РїСЂР°РІР»РµРЅРёСЏ');
+INSERT INTO `positions` (`id`,`name`) VALUES (1,'Р СѓРєРѕРІРѕРґРёС‚РµР»СЊ');
+INSERT INTO `positions` (`id`,`name`) VALUES (4,'Р СѓРєРѕРІРѕРґРёС‚РµР»СЊ Рё Р“Р»Р°РІР° РїСЂР°РІР»РµРЅРёСЏ');
 
-INSERT INTO `users` (`id`,`login`,`password`,`email`) VALUES (15,'Filipp','Filipp','filipp@makedonia.com');
-
-
-INSERT INTO `userinfo` (`id`,`name`,`surname`,`position_id`,`bday`,`magazine`,`photo`) VALUES (12,'Александра','Панкратова',4,'1996-01-01','Политех','null');
-
-INSERT INTO `userinfo` (`id`,`name`,`surname`,`position_id`,`bday`,`magazine`,`photo`) VALUES (13,'Никита','Рыжов',5,'1995-06-27','EPAM','null');
-
-INSERT INTO `userinfo` (`id`,`name`,`surname`,`position_id`,`bday`,`magazine`,`photo`) VALUES (14,'Дмитрий','Груздев',3,'1995-04-23','EPAM','null');
-
-INSERT INTO `userinfo` (`id`,`name`,`surname`,`position_id`,`bday`,`magazine`,`photo`) VALUES (15,'Филипп','Македонский',2,'1996-02-27','ЕКБ','null');
-
-
-INSERT INTO `positions` (`id`,`name`) VALUES (2,'Глава правления');
-
-INSERT INTO `positions` (`id`,`name`) VALUES (3,'Журналист');
-
-INSERT INTO `positions` (`id`,`name`) VALUES (5,'Журналист и Глава правления');
-
-INSERT INTO `positions` (`id`,`name`) VALUES (1,'Руководитель');
-
-INSERT INTO `positions` (`id`,`name`) VALUES (4,'Руководитель и Глава правления');
-
-INSERT INTO `messages` (`id_from`,`id_to`,`text`,`datetime`,`read`) VALUES (13,12,'Привет','2017-01-18 22:23:19',0);
-
-INSERT INTO `messages` (`id_from`,`id_to`,`text`,`datetime`,`read`) VALUES (14,13,'привет. я Дима','2017-01-18 22:34:22',0);
-
+INSERT INTO `messages` (`id_from`,`id_to`,`text`,`datetime`,`read`) VALUES (13,12,'РџСЂРёРІРµС‚','2017-01-18 22:23:19',0);
+INSERT INTO `messages` (`id_from`,`id_to`,`text`,`datetime`,`read`) VALUES (14,13,'РїСЂРёРІРµС‚. СЏ Р”РёРјР°','2017-01-18 22:34:22',0);
 INSERT INTO `messages` (`id_from`,`id_to`,`text`,`datetime`,`read`) VALUES (15,13,'hi','2017-01-18 22:38:45',0);
 
-
-INSERT INTO `articles` (`user_id`,`title`,`annotation`,`date`) VALUES (12,'Первая статья','Самая-самая первая статья','2016-01-18');
-
-INSERT INTO `articles` (`user_id`,`title`,`annotation`,`date`) VALUES (13,'Сентябрь','Осень','2016-09-13');
-
-INSERT INTO `articles` (`user_id`,`title`,`annotation`,`date`) VALUES (13,'Май','Весна','2015-05-13');
-
-INSERT INTO `articles` (`user_id`,`title`,`annotation`,`date`) VALUES (15,'Дота для задрота','WOW vs WOT','2017-01-18');
+INSERT INTO `articles` (`user_id`,`title`,`annotation`,`date`) VALUES (12,'РџРµСЂРІР°СЏ СЃС‚Р°С‚СЊСЏ','РЎР°РјР°СЏ-СЃР°РјР°СЏ РїРµСЂРІР°СЏ СЃС‚Р°С‚СЊСЏ','2016-01-18');
+INSERT INTO `articles` (`user_id`,`title`,`annotation`,`date`) VALUES (13,'РЎРµРЅС‚СЏР±СЂСЊ','РћСЃРµРЅСЊ','2016-09-13');
+INSERT INTO `articles` (`user_id`,`title`,`annotation`,`date`) VALUES (13,'РњР°Р№','Р’РµСЃРЅР°','2015-05-13');
+INSERT INTO `articles` (`user_id`,`title`,`annotation`,`date`) VALUES (15,'Р”РѕС‚Р° РґР»СЏ Р·Р°РґСЂРѕС‚Р°','WOW vs WOT','2017-01-18');
