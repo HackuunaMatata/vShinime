@@ -53,7 +53,7 @@
                         <i class="glyphicon glyphicon-gift"></i>
                     </div>
                     <% String date = new SimpleDateFormat("yyyy-MM-dd").format(userInfo.getBday()); %>
-                    <input id="bday" name="bday" type="text" placeholder="YYYY-MM-DD" class="form-control input-md"
+                    <input id="bday" name="bday" type="text" placeholder="<fmt:message key='dateFormat'/>" class="form-control input-md"
                     value="<%=date%>" required/>
                 </div>
             </div>

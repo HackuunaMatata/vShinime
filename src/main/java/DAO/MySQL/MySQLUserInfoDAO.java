@@ -43,13 +43,13 @@ public class MySQLUserInfoDAO extends MySQLDAO implements UserInfoDAO {
     }
 
     public List<UserInfo> getForHead(String magazine) {
-        String condition = "magazine='" + magazine + "' AND position_id=3 OR position_id=2 OR position_id=1 Or position_id=4";
+        String condition = "magazine='" + magazine + "' AND position_id=3 OR position_id=2 OR position_id=1 OR position_id=4 OR position_id=5";
         ResultSet resultSet = select("userinfo", condition);
         return getListFromResultSet(resultSet);
     }
 
     public List<UserInfo> getForJournalist(String magazine) {
-        String condition = "magazine='" + magazine + "' AND (position_id=3 OR position_id=1)";
+        String condition = "magazine='" + magazine + "' AND (position_id=3 OR position_id=1 OR position_id=5)";
         ResultSet resultSet = select("userinfo", condition);
         return getListFromResultSet(resultSet);
     }

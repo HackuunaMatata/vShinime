@@ -19,13 +19,14 @@
 <body>
 <%@ include file="header.jsp" %>
 <div class="col-md-offset-3 col-md-6">
+    <% SimpleDateFormat sdf = new SimpleDateFormat("dd.MM HH:mm:ss"); %>
     <c:forEach var="message" items="${lastMessages}">
+        <c:set var="sdf" value="<%=sdf%>" />
         <div class="panel panel-default">
             <div class="panel-title" style="padding: 10px 0; height: 50px;">
                 <div class="col-md-offset-1 col-md-7">${message.getColleague()}</div>
                 <div class="col-md-4" style="padding-top: 5px;">
-                    <%--<% String date = new SimpleDateFormat("dd MMMMM, yyyy").format(userInfo.getBday()); %>--%>
-                    <small>${message.getDate()} <i class="glyphicon glyphicon-time"></i></small>
+                    <small>${sdf.format(message.getDate())} <i class="glyphicon glyphicon-time"></i></small>
                 </div>
             </div>
             <a href="dialog?id=${message.getColleagueId()}"><div class="panel-body" style="padding: 10px 0; background-color: #ddd; color:black;">

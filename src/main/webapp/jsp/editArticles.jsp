@@ -24,43 +24,43 @@
             <c:if test="${article.getTitle().equals(\"\")}"> action="addArticles" </c:if>
           method="post">
         <div class="form-group">
-            <label class="col-md-4 control-label" for="title">Title</label>
+            <label class="col-md-4 control-label" for="title"><fmt:message key='title'/></label>
             <div class="col-md-6">
                 <div class="input-group">
                     <div class="input-group-addon">
                         <i class="glyphicon glyphicon-user"></i>
                     </div>
                     <c:if test="${!article.getTitle().equals(\"\")}">
-                        <input id="title" name="title" type="hidden" placeholder="Title" class="form-control input-md"
+                        <input id="title" name="title" type="hidden" placeholder="<fmt:message key='title'/>" class="form-control input-md"
                         value="${article.getTitle()}">
                     </c:if>
-                    <input id="newTitle" name="newTitle" type="text" placeholder="Title" class="form-control input-md"
+                    <input id="newTitle" name="newTitle" type="text" placeholder="<fmt:message key='title'/>" class="form-control input-md"
                            value="${article.getTitle()}"
                             <c:if test="${!article.getTitle().equals(\"\")}"> disabled </c:if> required/>
                 </div>
             </div>
         </div>
         <div class="form-group">
-            <label class="col-md-4 control-label" for="annotation">Annotation</label>
+            <label class="col-md-4 control-label" for="annotation"><fmt:message key='annotation'/></label>
             <div class="col-md-6">
                 <div class="input-group">
                     <div class="input-group-addon">
                         <i class="glyphicon glyphicon-user"></i>
                     </div>
-                    <textarea id="annotation" name="annotation" placeholder="Annotation" rows="5"
+                    <textarea id="annotation" name="annotation" placeholder="<fmt:message key='annotation'/>" rows="5"
                               class="form-control input-md" required>${article.getAnnotation()}</textarea>
                 </div>
             </div>
         </div>
         <div class="form-group">
-            <label class="col-md-4 control-label" for="date">Date</label>
+            <label class="col-md-4 control-label" for="date"><fmt:message key='date'/></label>
             <div class="col-md-6">
                 <div class="input-group">
                     <div class="input-group-addon">
                         <i class="glyphicon glyphicon-gift"></i>
                     </div>
                     <% String date = new SimpleDateFormat("yyyy-MM-dd").format(article.getDate()); %>
-                    <input id="date" name="date" type="text" placeholder="YYYY-MM-DD" class="form-control input-md"
+                    <input id="date" name="date" type="text" placeholder="<fmt:message key='dateFormat'/>" class="form-control input-md"
                            value="<%=date%>" required/>
                 </div>
             </div>
@@ -68,7 +68,7 @@
         <div class="form-group">
             <label class="col-md-4 control-label"></label>
             <div class="col-md-6">
-                <button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-thumbs-up"></span> Submit</button>
+                <button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-thumbs-up"></span> <fmt:message key='submit'/></button>
             </div>
         </div>
     </form>
