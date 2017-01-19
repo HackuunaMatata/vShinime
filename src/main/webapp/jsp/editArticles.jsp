@@ -28,7 +28,7 @@
             <div class="col-md-6">
                 <div class="input-group">
                     <div class="input-group-addon">
-                        <i class="glyphicon glyphicon-user"></i>
+                        <i class="glyphicon glyphicon-text-background"></i>
                     </div>
                     <c:if test="${!article.getTitle().equals(\"\")}">
                         <input id="title" name="title" type="hidden" placeholder="<fmt:message key='title'/>" class="form-control input-md"
@@ -45,7 +45,7 @@
             <div class="col-md-6">
                 <div class="input-group">
                     <div class="input-group-addon">
-                        <i class="glyphicon glyphicon-user"></i>
+                        <i class="glyphicon glyphicon-book"></i>
                     </div>
                     <textarea id="annotation" name="annotation" placeholder="<fmt:message key='annotation'/>" rows="5"
                               class="form-control input-md" required>${article.getAnnotation()}</textarea>
@@ -57,7 +57,7 @@
             <div class="col-md-6">
                 <div class="input-group">
                     <div class="input-group-addon">
-                        <i class="glyphicon glyphicon-gift"></i>
+                        <i class="glyphicon glyphicon-calendar"></i>
                     </div>
                     <% String date = new SimpleDateFormat("yyyy-MM-dd").format(article.getDate()); %>
                     <input id="date" name="date" type="text" placeholder="<fmt:message key='dateFormat'/>" class="form-control input-md"

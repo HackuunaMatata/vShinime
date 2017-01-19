@@ -1,8 +1,7 @@
-package servlets;
+package servlets.articles;
 
 import DAO.ArticlesDAO;
 import DAO.DAOFactory;
-import DAO.MySQL.MySQLDAO;
 import entities.Articles;
 import entities.Users;
 import org.apache.log4j.Logger;

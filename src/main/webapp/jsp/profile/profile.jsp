@@ -18,11 +18,11 @@
 <html>
 <head>
     <title>Profile</title>
-    <link rel="stylesheet" type="text/css" href="../styles/bootstrap/css/bootstrap.css">
-    <link rel="stylesheet" type="text/css" href="../styles/css/mainPage.css">
+    <link rel="stylesheet" type="text/css" href="../../styles/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../../styles/css/mainPage.css">
 </head>
 <body>
-<%@ include file="header.jsp" %>
+<%@ include file="../header.jsp" %>
 <div class="row user-info">
     <div class="col-sm-6 col-md-4 user-photo">
         <img width="200" height="200" src="../images/data/${!userInfo.getPhoto().equals("null") ? userInfo.getPhoto() : "default.png"}"/>
@@ -46,7 +46,7 @@
             <div class="thumbnail">
                 <div class="caption">
                     <h3>${article.getTitle()}</h3>
-                    <small><cite title="date">${article.getDate()} <i class="glyphicon glyphicon-file">
+                    <small><cite title="date">${article.getDate()} <i class="glyphicon glyphicon-book">
                     </i></cite></small>
                     <p>${article.getAnnotation()}</p>
                     <div>
@@ -61,7 +61,7 @@
         <div class="thumbnail">
             <div class="caption add-article">
                 <a href="addArticles" role="button">
-                <img height="150" width="150" src="../images/add_article.png"/>
+                <img height="150" width="150" src="../../images/add_article.png"/>
                 </a>
             </div>
         </div>

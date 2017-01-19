@@ -15,11 +15,11 @@
 <html>
 <head>
     <title>Dialog</title>
-    <link rel="stylesheet" type="text/css" href="../styles/bootstrap/css/bootstrap.css">
-    <link rel="stylesheet" type="text/css" href="../styles/css/mainPage.css">
+    <link rel="stylesheet" type="text/css" href="../../styles/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../../styles/css/mainPage.css">
 </head>
 <body>
-<%@ include file="header.jsp" %>
+<%@ include file="../header.jsp" %>
 <div class="container">
     <div class="row">
         <div class="panel panel-default">

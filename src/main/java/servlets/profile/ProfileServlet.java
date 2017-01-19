@@ -1,8 +1,7 @@
-package servlets;
+package servlets.profile;
 
 import DAO.ArticlesDAO;
 import DAO.DAOFactory;
-import DAO.MySQL.MySQLDAO;
 import DAO.PositionsDAO;
 import DAO.UserInfoDAO;
 import entities.Articles;
@@ -58,7 +57,7 @@ public class ProfileServlet extends HttpServlet {
         request.setAttribute("userInfo", userInfo);
         request.setAttribute("position", position);
         request.setAttribute("articles", articlesByUserId);
-        request.getRequestDispatcher("/jsp/profile.jsp").forward(request, response);
+        request.getRequestDispatcher("/jsp/profile/profile.jsp").forward(request, response);
     }
 
 }

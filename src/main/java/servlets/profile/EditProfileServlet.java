@@ -1,7 +1,6 @@
-package servlets;
+package servlets.profile;
 
 import DAO.DAOFactory;
-import DAO.MySQL.MySQLDAO;
 import DAO.PositionsDAO;
 import DAO.UserInfoDAO;
 import DAO.UsersDAO;
@@ -86,7 +85,7 @@ public class EditProfileServlet extends HttpServlet {
 
         request.setAttribute("userInfo", userInfo);
         request.setAttribute("positions", positions);
-        request.getRequestDispatcher("jsp/editProfile.jsp").forward(request, response);
+        request.getRequestDispatcher("jsp/profile/editProfile.jsp").forward(request, response);
     }
 
     private static Date getDateFromString(String date) {

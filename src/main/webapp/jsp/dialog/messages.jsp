@@ -13,11 +13,11 @@
 <html>
 <head>
     <title>Messages</title>
-    <link rel="stylesheet" type="text/css" href="../styles/bootstrap/css/bootstrap.css">
-    <link rel="stylesheet" type="text/css" href="../styles/css/mainPage.css">
+    <link rel="stylesheet" type="text/css" href="../../styles/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../../styles/css/mainPage.css">
 </head>
 <body>
-<%@ include file="header.jsp" %>
+<%@ include file="../header.jsp" %>
 <div class="col-md-offset-3 col-md-6">
     <% SimpleDateFormat sdf = new SimpleDateFormat("dd.MM HH:mm:ss"); %>
     <c:forEach var="message" items="${lastMessages}">

@@ -1,7 +1,6 @@
-package servlets;
+package servlets.authorization;
 
 import DAO.DAOFactory;
-import DAO.MySQL.MySQLDAO;
 import DAO.UserInfoDAO;
 import DAO.UsersDAO;
 import utils.HashPassword;

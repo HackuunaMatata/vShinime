@@ -1,8 +1,7 @@
-package servlets;
+package servlets.dialog;
 
 import DAO.DAOFactory;
 import DAO.MessagesDAO;
-import DAO.MySQL.MySQLDAO;
 import DAO.UserInfoDAO;
 import entities.LastMessage;
 import entities.Messages;
@@ -15,7 +14,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
-import java.sql.Date;
 import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -64,6 +62,6 @@ public class MessagesServlet extends HttpServlet {
         }
 
         request.setAttribute("lastMessages", messages);
-        request.getRequestDispatcher("/jsp/messages.jsp").forward(request, response);
+        request.getRequestDispatcher("/jsp/dialog/messages.jsp").forward(request, response);
     }
 }

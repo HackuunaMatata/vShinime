@@ -1,8 +1,7 @@
-package servlets;
+package servlets.dialog;
 
 import DAO.DAOFactory;
 import DAO.MessagesDAO;
-import DAO.MySQL.MySQLDAO;
 import DAO.UserInfoDAO;
 import entities.Messages;
 import entities.UserInfo;
@@ -58,7 +57,7 @@ public class DialogServlet extends HttpServlet {
         request.setAttribute("nMessages", nMessages);
         request.setAttribute("guest", guest);
         request.setAttribute("userInfo", userInfo);
-        request.getRequestDispatcher("/jsp/dialog.jsp").forward(request, response);
+        request.getRequestDispatcher("/jsp/dialog/dialog.jsp").forward(request, response);
 
     }
 }

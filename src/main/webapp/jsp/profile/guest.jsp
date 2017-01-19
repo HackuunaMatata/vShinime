@@ -17,11 +17,11 @@
 <html>
 <head>
     <title>Your colleague</title>
-    <link rel="stylesheet" type="text/css" href="../styles/bootstrap/css/bootstrap.css">
-    <link rel="stylesheet" type="text/css" href="../styles/css/mainPage.css">
+    <link rel="stylesheet" type="text/css" href="../../styles/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../../styles/css/mainPage.css">
 </head>
 <body>
-<%@ include file="header.jsp" %>
+<%@ include file="../header.jsp" %>
 <div class="row user-info">
     <div class="col-sm-6 col-md-4 user-photo">
         <img width="200" height="200" src="../images/data/${!userInfo.getPhoto().equals("null") ? userInfo.getPhoto() : "default.png"}"/>

@@ -1,4 +1,4 @@
-package servlets;
+package servlets.authorization;
 
 /**
  * Created by HackuunaMatata on 15.01.2017.

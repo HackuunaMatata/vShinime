@@ -1,18 +1,11 @@
-package servlets;
-
-import DAO.DAOFactory;
-import DAO.MySQL.MySQLDAO;
-import DAO.UsersDAO;
-import entities.Users;
+package servlets.authorization;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 import java.io.IOException;
-import java.util.List;
 
 /**
  * Created by HackuunaMatata on 12.01.2017.

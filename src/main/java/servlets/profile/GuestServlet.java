@@ -1,4 +1,4 @@
-package servlets;
+package servlets.profile;
 
 import DAO.*;
 import entities.Articles;
@@ -40,6 +40,6 @@ public class GuestServlet extends HttpServlet {
         request.setAttribute("userInfo", userInfo);
         request.setAttribute("position", position);
         request.setAttribute("articles", articles);
-        request.getRequestDispatcher("/jsp/guest.jsp").forward(request, response);
+        request.getRequestDispatcher("/jsp/profile/guest.jsp").forward(request, response);
     }
 }

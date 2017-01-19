@@ -14,11 +14,11 @@
 <html>
 <head>
     <title>Edit Profile</title>
-    <link rel="stylesheet" type="text/css" href="../styles/bootstrap/css/bootstrap.css">
-    <link rel="stylesheet" type="text/css" href="../styles/css/mainPage.css">
+    <link rel="stylesheet" type="text/css" href="../../styles/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../../styles/css/mainPage.css">
 </head>
 <body>
-<%@ include file="header.jsp" %>
+<%@ include file="../header.jsp" %>
 <div class="col-md-offset-2 col-md-8">
     <form class="form-horizontal common-label" action="editProfile" method="post" enctype="multipart/form-data">
         <div class="form-group">
@@ -63,7 +63,7 @@
             <div class="col-md-6">
                 <div class="input-group">
                     <div class="input-group-addon">
-                        <i class="glyphicon glyphicon-user"></i>
+                        <i class="glyphicon glyphicon-list-alt"></i>
                     </div>
                     <input id="magazine" name="magazine" type="text" placeholder="<fmt:message key='magazine'/>" class="form-control input-md"
                     value="${userInfo.getMagazine()}"/>
@@ -99,7 +99,7 @@
             <div class="col-md-6">
                 <div class="input-group">
                     <div class="input-group-addon">
-                        <i class="glyphicon glyphicon-user"></i>
+                        <i class="glyphicon glyphicon-envelope"></i>
                     </div>
                     <input id="email" name="email" type="email" placeholder="<fmt:message key='email'/>" class="form-control input-md"
                     value="${user.getEmail()}" required/>
@@ -111,7 +111,7 @@
             <div class="col-md-6">
                 <div class="input-group">
                     <div class="input-group-addon">
-                        <i class="glyphicon glyphicon-user"></i>
+                        <i class="glyphicon glyphicon-lock"></i>
                     </div>
                     <input id="password" name="password" type="password" placeholder="<fmt:message key='newPassword'/>" class="form-control input-md"/>
                 </div>

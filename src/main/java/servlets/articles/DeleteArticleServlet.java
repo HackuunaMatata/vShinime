@@ -1,8 +1,7 @@
-package servlets;
+package servlets.articles;
 
 import DAO.ArticlesDAO;
 import DAO.DAOFactory;
-import DAO.MySQL.MySQLDAO;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
