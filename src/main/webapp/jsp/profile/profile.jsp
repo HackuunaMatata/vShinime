@@ -25,7 +25,12 @@
 <%@ include file="../header.jsp" %>
 <div class="row user-info">
     <div class="col-sm-6 col-md-4 user-photo">
-        <img width="200" height="200" src="../images/data/${!userInfo.getPhoto().equals("null") ? userInfo.getPhoto() : "default.png"}"/>
+        <c:if test="${!userInfo.getPhoto().equals(\"null\")}">
+            <img width="200" height="200" src="images/${userInfo.getPhoto()}"/>
+        </c:if>
+        <c:if test="${userInfo.getPhoto().equals(\"null\")}">
+            <img width="200" height="200" src="../../images/default.png"/>
+        </c:if>
     </div>
     <div class="col-sm-6 col-md-8 info big-text">
         <h2>${userInfo.getName()} ${userInfo.getSurname()}</h2>

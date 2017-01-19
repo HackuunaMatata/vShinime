@@ -83,7 +83,7 @@ public class MySQLUserInfoDAO extends MySQLDAO implements UserInfoDAO {
         return null;
     }
 
-    public void updateUserInfo(String newName, String newSurname, Date bday, int newPositionId, String newMagazine, String newPhoto, int id) {
+    public void updateUserInfo(String newName, String newSurname, Date bday, int newPositionId, String newMagazine, int id) {
         String set;
         String fullName;
         String fullWork;
@@ -91,7 +91,6 @@ public class MySQLUserInfoDAO extends MySQLDAO implements UserInfoDAO {
         String setSurname = newSurname == null ? "" : "surname='" + newSurname + "'";
         String setPositionId = newPositionId == -1 ? "" : "position_id=" + newPositionId;
         String setMagazine = newMagazine == null ? "" : "magazine='" + newMagazine + "'";
-        String setPhoto = newPhoto == null ? "" : "photo='" + newPhoto + "'";
 
         if (!setName.equals("") && !setSurname.equals("")) fullName = setName + ", " + setSurname;
         else fullName = setName + setSurname;
@@ -99,14 +98,19 @@ public class MySQLUserInfoDAO extends MySQLDAO implements UserInfoDAO {
         if (!setPositionId.equals("") && !setMagazine.equals("")) fullWork = setPositionId + ", " + setMagazine;
         else fullWork = setPositionId + setMagazine;
 
-        if (!fullName.equals("") && !setPhoto.equals("")) set = fullName + ", " + setPhoto;
-        else set = fullName + setPhoto;
+        if (!fullName.equals("") && !fullWork.equals("")) set = fullName + ", " + fullWork;
+        else set = fullName + fullWork;
 
-        if (!set.equals("") && !fullWork.equals("")) set += ", " + fullWork + ", bday='" + bday + "'";
-        else set += fullWork + ", bday='" + bday + "'";
+        if (!set.equals("")) set += ", bday='" + bday + "'";
+        else set += "bday='" + bday + "'";
 
         update("userinfo", set, "id='" + id + "'");
 
+    }
+
+    public void updateUserPhoto(String photo, int id) {
+        String set = photo == null ? "" : "photo='" + photo + "'";
+        update("userinfo", set, "id='" + id + "'");
     }
 
 }

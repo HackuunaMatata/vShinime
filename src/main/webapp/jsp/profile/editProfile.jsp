@@ -20,7 +20,7 @@
 <body>
 <%@ include file="../header.jsp" %>
 <div class="col-md-offset-2 col-md-8">
-    <form class="form-horizontal common-label" action="editProfile" method="post" enctype="multipart/form-data">
+    <form class="form-horizontal common-label" action="editProfile" method="post">
         <div class="form-group">
             <label class="col-md-4 control-label" for="name"><fmt:message key='name'/></label>
             <div class="col-md-6">
@@ -28,8 +28,9 @@
                     <div class="input-group-addon">
                         <i class="glyphicon glyphicon-user"></i>
                     </div>
-                    <input id="name" name="name" type="text" placeholder="<fmt:message key='name'/>" class="form-control input-md"
-                     value="${userInfo.getName()}" required/>
+                    <input id="name" name="name" type="text" placeholder="<fmt:message key='name'/>"
+                           class="form-control input-md"
+                           value="${userInfo.getName()}" required/>
                 </div>
             </div>
         </div>
@@ -40,8 +41,9 @@
                     <div class="input-group-addon">
                         <i class="glyphicon glyphicon-user"></i>
                     </div>
-                    <input id="surname" name="surname" type="text" placeholder="<fmt:message key='surname'/>" class="form-control input-md"
-                    value="${userInfo.getSurname()}" required/>
+                    <input id="surname" name="surname" type="text" placeholder="<fmt:message key='surname'/>"
+                           class="form-control input-md"
+                           value="${userInfo.getSurname()}" required/>
                 </div>
             </div>
         </div>
@@ -53,8 +55,9 @@
                         <i class="glyphicon glyphicon-gift"></i>
                     </div>
                     <% String date = new SimpleDateFormat("yyyy-MM-dd").format(userInfo.getBday()); %>
-                    <input id="bday" name="bday" type="text" placeholder="<fmt:message key='dateFormat'/>" class="form-control input-md"
-                    value="<%=date%>" required/>
+                    <input id="bday" name="bday" type="text" placeholder="<fmt:message key='dateFormat'/>"
+                           class="form-control input-md"
+                           value="<%=date%>" required/>
                 </div>
             </div>
         </div>
@@ -65,8 +68,9 @@
                     <div class="input-group-addon">
                         <i class="glyphicon glyphicon-list-alt"></i>
                     </div>
-                    <input id="magazine" name="magazine" type="text" placeholder="<fmt:message key='magazine'/>" class="form-control input-md"
-                    value="${userInfo.getMagazine()}"/>
+                    <input id="magazine" name="magazine" type="text" placeholder="<fmt:message key='magazine'/>"
+                           class="form-control input-md"
+                           value="${userInfo.getMagazine()}"/>
                 </div>
             </div>
         </div>
@@ -78,22 +82,15 @@
                             <c:if test="${userInfo.getPositionId() == -1}">selected</c:if> value="-1"></option>
                     <c:forEach var="position" items="${positions}">
                         <option
-                                <c:if test="${userInfo.getPositionId() == position.getId()}">selected</c:if> value="${position.getId()}">
+                                <c:if test="${userInfo.getPositionId() == position.getId()}">selected</c:if>
+                                value="${position.getId()}">
                                 ${position.getName()}
                         </option>
                     </c:forEach>
                 </select>
             </div>
         </div>
-        <!-- File Button -->
-        <div class="form-group">
-            <label class="col-md-4 control-label" for="photo"><fmt:message key='uploadPhoto'/></label>
-            <div class="col-md-6">
-                <input id="photo" name="photo" class="input-file shinima-input-file" type="file">
-            </div>
-        </div>
         <hr/>
-        <%--------------%>
         <div class="form-group">
             <label class="col-md-4 control-label" for="email"><fmt:message key='email'/></label>
             <div class="col-md-6">
@@ -101,8 +98,9 @@
                     <div class="input-group-addon">
                         <i class="glyphicon glyphicon-envelope"></i>
                     </div>
-                    <input id="email" name="email" type="email" placeholder="<fmt:message key='email'/>" class="form-control input-md"
-                    value="${user.getEmail()}" required/>
+                    <input id="email" name="email" type="email" placeholder="<fmt:message key='email'/>"
+                           class="form-control input-md"
+                           value="${user.getEmail()}" required/>
                 </div>
             </div>
         </div>
@@ -113,14 +111,34 @@
                     <div class="input-group-addon">
                         <i class="glyphicon glyphicon-lock"></i>
                     </div>
-                    <input id="password" name="password" type="password" placeholder="<fmt:message key='newPassword'/>" class="form-control input-md"/>
+                    <input id="password" name="password" type="password" placeholder="<fmt:message key='newPassword'/>"
+                           class="form-control input-md"/>
                 </div>
             </div>
         </div>
         <div class="form-group">
             <label class="col-md-4 control-label"></label>
             <div class="col-md-6">
-                <button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-thumbs-up"></span> <fmt:message key='submit'/></button>
+                <button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-thumbs-up"></span>
+                    <fmt:message key='submit'/></button>
+            </div>
+        </div>
+    </form>
+    <hr/>
+    <form class="form-horizontal common-label" action="updatePhoto" method="post" enctype="multipart/form-data">
+        <!-- File Button -->
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="photo"><fmt:message key='uploadPhoto'/></label>
+            <div class="col-md-6">
+                <input id="photo" name="photo" class="input-file shinima-input-file" type="file">
+            </div>
+        </div>
+        <%--------------%>
+        <div class="form-group">
+            <label class="col-md-4 control-label"></label>
+            <div class="col-md-6">
+                <button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-thumbs-up"></span>
+                    <fmt:message key='submit'/></button>
             </div>
         </div>
     </form>
