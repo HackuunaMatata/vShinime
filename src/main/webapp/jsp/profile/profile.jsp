@@ -9,6 +9,7 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="ct" uri="/WEB-INF/formatTag" %>
 
 <jsp:useBean id="userInfo" scope="request" type="entities.UserInfo"/>
 <jsp:useBean id="position" scope="request" type="java.lang.String"/>
@@ -39,8 +40,8 @@
         <p>
             <i class="glyphicon glyphicon-envelope"></i> ${user.getEmail()}
             <br/>
-            <% String date = new SimpleDateFormat("dd MMMMM, yyyy", locale).format(userInfo.getBday()); %>
-            <i class="glyphicon glyphicon-gift"></i> <%=date%>
+            <i class="glyphicon glyphicon-gift"></i>
+            <ct:dateFormat format="dd MMMMM, yyyy" date="${userInfo.getBday()}" locale="${locale}"/>
             <br/>
         </p>
     </div>

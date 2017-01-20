@@ -7,6 +7,7 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="ct" uri="/WEB-INF/formatTag" %>
 
 <jsp:useBean id="friend" scope="request" type="entities.Users"/>
 <jsp:useBean id="userInfo" scope="request" type="entities.UserInfo"/>
@@ -38,8 +39,8 @@
         <p>
             <i class="glyphicon glyphicon-envelope"></i> ${friend.getEmail()}
             <br/>
-            <% String date = new SimpleDateFormat("dd MMMMM, yyyy", locale).format(userInfo.getBday()); %>
-            <i class="glyphicon glyphicon-gift"></i> <%=date%>
+            <i class="glyphicon glyphicon-gift"></i>
+            <ct:dateFormat format="dd MMMMM, yyyy" date="${userInfo.getBday()}" locale="${locale}"/>
             <br/>
             <br/>
             <a class="btn btn-info" href="dialog?id=${friend.getId()}"><fmt:message key='sendMessage'/></a>

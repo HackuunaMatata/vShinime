@@ -1,4 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="ct" uri="/WEB-INF/formatTag" %>
 <%@ page import="java.text.SimpleDateFormat" %><%--
   Created by IntelliJ IDEA.
   User: HackuunaMatata
@@ -59,9 +60,8 @@
                     <div class="input-group-addon">
                         <i class="glyphicon glyphicon-calendar"></i>
                     </div>
-                    <% String date = new SimpleDateFormat("yyyy-MM-dd").format(article.getDate()); %>
                     <input id="date" name="date" type="text" placeholder="<fmt:message key='dateFormat'/>" class="form-control input-md"
-                           value="<%=date%>" required/>
+                           value="<ct:dateFormat format="yyyy-MM-dd" date="${article.getDate()}"/>" required/>
                 </div>
             </div>
         </div>

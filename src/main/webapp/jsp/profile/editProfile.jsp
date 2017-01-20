@@ -1,5 +1,7 @@
 <%@ page import="java.text.SimpleDateFormat" %>
+<%@ page import="java.util.Locale" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="ct" uri="/WEB-INF/formatTag" %>
 <%--
   Created by IntelliJ IDEA.
   User: HackuunaMatata
@@ -54,10 +56,9 @@
                     <div class="input-group-addon">
                         <i class="glyphicon glyphicon-gift"></i>
                     </div>
-                    <% String date = new SimpleDateFormat("yyyy-MM-dd").format(userInfo.getBday()); %>
                     <input id="bday" name="bday" type="text" placeholder="<fmt:message key='dateFormat'/>"
                            class="form-control input-md"
-                           value="<%=date%>" required/>
+                           value="<ct:dateFormat format="yyyy-MM-dd" date="${userInfo.getBday()}"/>" required/>
                 </div>
             </div>
         </div>
