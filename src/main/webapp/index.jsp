@@ -11,7 +11,7 @@
     </head>
     <body>
     <%@ include file="jsp/header.jsp" %>
-    <div class="main-page">
+    <div>
         <div class="col-md-4">
             <c:if test="${!loginError.equals('')}">
                 <div class="alert alert-danger" role="alert">${loginError}</div>

@@ -6,11 +6,15 @@
 body {
     margin-top: 75px;
     font-family: vShinime, Arial, sans-serif;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.6) 100%), url(/images/main.jpg) fixed;
+    background-size: 100%;
 }
 
-/*.main-page {*/
-    /*background-image: url(/images/main.jpg);*/
-/*}*/
+small {
+    display: block;
+    line-height: 1.428571429;
+    color: #999;
+}
 
 /* Header */
 .shinima-header {
@@ -22,6 +26,10 @@ body {
     padding: 8px 100px;
     background-color: #505050;
     font-size: 1.2em;
+}
+
+.shinima-header img {
+    float: left;
 }
 
 .shinima-header .navbar-brand {
@@ -44,8 +52,21 @@ body {
     font-size: 1.2em;
 }
 
+/* Profile */
 .user-info {
     margin: 35px 0;
+}
+
+.big-text {
+    font-size: 1.5em;
+}
+
+.user-photo {
+    text-align: center;
+}
+
+.info {
+    border-left: solid #ddd 2px;
 }
 
 .articles {
@@ -57,74 +78,16 @@ body {
     height: 40px;
 }
 
-.big-text {
-    font-size: 1.5em;
-}
-
-.shinima-dialog {
-    height: 80%;
-    overflow-y: scroll;
-}
-
-.shinima-messages .panel-title {
-    padding: 10px 0;
-    height: 50px;
-}
-
-.shinima-messages .message-time {
-    padding-top: 5px;
-}
-
-.shinima-messages .panel-body {
-    padding: 10px 0;
-    background-color: #ddd;
-    color:black;
-}
-
-.shinima-messages .last-message {
-    height: 3em;
-    overflow: hidden;
-}
-
-small {
-    display: block;
-    line-height: 1.428571429;
-    color: #999;
-}
-
-.user-photo {
-    text-align: center;
-}
-
-.info {
-    border-left: solid #ddd 2px;
-}
-
-.table-friends {
-    padding: 10px;
-}
-
-.table-friends table {
-    font-size: 1.2em;
-    border: solid #ddd 2px;
-}
-
-.table-friends table td {
-    width: 25%;
-}
-
-.table-friends table tr:first-child {
-    border: solid #ddd 2px;
-}
-
 .add-article img {
     cursor: pointer;
     display: block;
     margin: 0 auto;
 }
 
-.second-column-form {
-    border-left: solid #ddd 2px;
+/* Dialog */
+.shinima-dialog {
+    height: 80%;
+    overflow-y: scroll;
 }
 
 .message-bubble {
@@ -154,4 +117,43 @@ small {
 
 .panel-footer form {
     margin: 0;
+}
+
+/* Messages */
+.shinima-messages .panel-title {
+    padding: 10px 0;
+    height: 50px;
+}
+
+.shinima-messages .message-time {
+    padding-top: 5px;
+}
+
+.shinima-messages .panel-body {
+    padding: 10px 0;
+    background-color: #ddd;
+    color:black;
+}
+
+.shinima-messages .last-message {
+    height: 3em;
+    overflow: hidden;
+}
+
+/* Friends */
+.table-friends {
+    padding: 10px;
+}
+
+.table-friends table {
+    font-size: 1.2em;
+    border: solid #ddd 2px;
+}
+
+.table-friends table td {
+    width: 25%;
+}
+
+.table-friends table tr:first-child {
+    border: solid #ddd 2px;
 }

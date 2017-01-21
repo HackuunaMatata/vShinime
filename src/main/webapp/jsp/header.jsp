@@ -13,8 +13,8 @@
 <header class="navbar navbar-default shinima-header">
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <div class="navbar-header col-md-3">
-            <a class="navbar-brand" href="/">vShinime</a>
             <img height="40px" src="images/vShinime.png">
+            <a class="navbar-brand" href="/">vShinime</a>
         </div>
 
         <c:if test="${user.getLogin() != null}">

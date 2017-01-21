@@ -31,10 +31,10 @@ public class Main {
 
         UserInfoDAO userInfoDAO = sql.getUserInfoDAO();
         //new GregorianCalendar(116, 1, 1).getTimeInMillis()
-        //userInfoDAO.addUserInfo(2, "po", "po", 3,  new Date(116, 01, 01), "fgh", "pou");
+        //userInfoDAO.addUserInfo(2, "po", "po", 3,  new Date(116, 01, 01), "fgh", null);
         //System.out.println(userInfoDAO.getTable());
         //System.out.println(userInfoDAO.getUserInfoById(1));
-        //userInfoDAO.updateUserInfo("alex", null, 2, null, "df", 1);
+        //userInfoDAO.updateUserInfo(null, null, new Date(118, 01, 01), 3, "qqqqqqqq", 2);
 
         PositionsDAO positionsDAO = sql.getPositionsDAO();
         //System.out.println(positionsDAO.getTable());
