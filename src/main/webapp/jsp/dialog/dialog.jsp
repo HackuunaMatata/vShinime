@@ -1,5 +1,6 @@
 <%@ page import="java.text.SimpleDateFormat" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="ct" uri="/WEB-INF/datetimeTag" %>
 <%--
   Created by IntelliJ IDEA.
   User: HackuunaMatata
@@ -25,9 +26,7 @@
         <div class="panel panel-default">
             <div class="panel-body">
                 <div class="container" style="height: 80%; overflow-y: scroll;">
-                    <% SimpleDateFormat sdf = new SimpleDateFormat("dd.MM HH:mm:ss"); %>
                     <c:forEach var="message" items="${nMessages}">
-                        <c:set var="sdf" value="<%=sdf%>"/>
                         <div class="row message-bubble
                                 <c:if test="${message.getId_from()==user.getId()}">message-bubble-dark</c:if>
                                 <c:if test="${message.getId_from()==guest.getId()}">message-bubble-light</c:if>">
@@ -37,7 +36,9 @@
                             </p>
                             <span>${message.getText()}</span>
                             <small class="pull-right time"><i
-                                    class="fa fa-clock-o"></i>${sdf.format(message.getDatetime())}</small>
+                                    class="fa fa-clock-o"></i><ct:datetimeFormat format="dd.MM HH:mm:ss"
+                                                                                 datetime="${message.getDatetime()}"/>
+                            </small>
                         </div>
                     </c:forEach>
                 </div>
