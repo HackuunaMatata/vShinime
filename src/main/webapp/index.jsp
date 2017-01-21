@@ -37,9 +37,11 @@
                 </div>
             </form>
         </div>
-        <div style="text-align: center;" class="col-md-7 info">
+        <div class="main-text col-md-7 info">
             <h3><fmt:message key='mainTitle'/></h3>
             <h5><fmt:message key='mainText'/></h5>
+            <br/>
+            <h5 class="shinima-description"><fmt:message key="text"/></h5>
         </div>
     </div>
     </body>

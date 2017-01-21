@@ -36,6 +36,17 @@ small {
     font-size: 1.3em;
 }
 
+/* Index */
+.main-text {
+    text-align: center;
+}
+
+.main-text .shinima-description {
+    white-space: pre-wrap;
+    text-align: left;
+    line-height: 1.4em;
+}
+
 /* Edit profile */
 .shinima-input-file {
     margin-top: 12px;
