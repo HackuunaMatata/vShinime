@@ -11,7 +11,7 @@
     </head>
     <body>
     <%@ include file="jsp/header.jsp" %>
-    <div>
+    <div class="main-page">
         <div class="col-md-4">
             <c:if test="${!loginError.equals('')}">
                 <div class="alert alert-danger" role="alert">${loginError}</div>
@@ -37,8 +37,9 @@
                 </div>
             </form>
         </div>
-        <div class="col-md-7 info">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus nam perspiciatis quae quod saepe. Ab, asperiores dignissimos eaque error ex ipsa laudantium magni maiores nobis quidem quod sapiente sed ut velit vero. Ad commodi delectus deserunt eaque eius expedita fugit illo impedit iste iure iusto maiores nihil officia optio porro provident quas recusandae reiciendis, reprehenderit saepe sed similique soluta sunt suscipit temporibus ut voluptatibus voluptatum! Doloribus ea, eligendi facere id, incidunt ipsam necessitatibus provident qui quis recusandae sequi vitae! Consequuntur deleniti deserunt est inventore sapiente, sequi sit tempora voluptate voluptatem voluptatibus. Ab debitis deleniti ducimus eum exercitationem, fuga quaerat. Blanditiis dolorem facilis quod saepe sequi. Alias architecto beatae blanditiis deleniti doloremque eaque esse exercitationem expedita hic illo maxime molestias natus nemo non obcaecati officiis, optio quidem quod, rem reprehenderit repudiandae sunt suscipit temporibus veniam voluptas? Cumque debitis deserunt doloremque, eius esse eum id impedit ipsum laudantium minus optio quidem suscipit velit. Aut cupiditate doloribus ducimus enim eos et eum facere facilis illum inventore magnam molestiae nam, neque, nihil nobis numquam praesentium quis, quos reprehenderit vero. Aspernatur consectetur dolorum ex in ipsum iure odit, repellendus temporibus vero voluptate? Aut autem facilis soluta? Culpa debitis eveniet nesciunt quis totam? Animi aperiam asperiores aspernatur consequuntur eligendi et ex ipsa laudantium molestias odio, odit quibusdam quidem suscipit! Aspernatur culpa dolorem ipsum minus placeat repudiandae sint ut! Accusantium ad animi consequuntur delectus doloribus exercitationem explicabo fugit impedit iste molestiae natus, neque nobis numquam quod recusandae reiciendis reprehenderit saepe sequi sit tenetur unde, velit voluptas voluptatibus?
+        <div style="text-align: center;" class="col-md-7 info">
+            <h3><fmt:message key='mainTitle'/></h3>
+            <h5><fmt:message key='mainText'/></h5>
         </div>
     </div>
     </body>

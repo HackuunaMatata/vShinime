@@ -1,4 +1,4 @@
-<%@ page import="java.text.SimpleDateFormat" %><%--
+<%--
   Created by IntelliJ IDEA.
   User: HackuunaMatata
   Date: 16.01.2017
@@ -43,7 +43,7 @@
             <ct:dateFormat format="dd MMMMM, yyyy" date="${userInfo.getBday()}" locale="${locale}"/>
             <br/>
             <br/>
-            <a class="btn btn-info" href="dialog?id=${friend.getId()}"><fmt:message key='sendMessage'/></a>
+            <a class="btn btn-info col-md-3" href="dialog?id=${friend.getId()}"><fmt:message key='sendMessage'/></a>
         </p>
     </div>
 </div>

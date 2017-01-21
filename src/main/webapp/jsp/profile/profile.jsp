@@ -1,5 +1,3 @@
-<%@ page import="java.text.SimpleDateFormat" %>
-<%@ page import="java.util.Locale" %>
 <%--
   Created by IntelliJ IDEA.
   User: HackuunaMatata
@@ -55,9 +53,9 @@
                     <small><cite title="date">${article.getDate()} <i class="glyphicon glyphicon-book">
                     </i></cite></small>
                     <p>${article.getAnnotation()}</p>
-                    <div>
-                        <a href="editArticles?title=${article.getTitle()}" class="btn btn-info" role="button"><fmt:message key='editInformation'/></a>
-                        <a href="deleteArticle?id=${article.getUserId()}&title=${article.getTitle()}" class="btn btn-primary pull-right" role="button"><fmt:message key='deleteArticle'/></a>
+                    <div class="article-buttons">
+                        <a href="editArticles?title=${article.getTitle()}" class="btn btn-info col-sm-6 col-md-5" role="button"><fmt:message key='editInformation'/></a>
+                        <a href="deleteArticle?id=${article.getUserId()}&title=${article.getTitle()}" class="btn btn-primary pull-right col-sm-6 col-md-5" role="button"><fmt:message key='deleteArticle'/></a>
                     </div>
                 </div>
             </div>

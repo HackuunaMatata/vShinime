@@ -1,4 +1,3 @@
-<%@ page import="java.text.SimpleDateFormat" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="ct" uri="/WEB-INF/datetimeTag" %>
 <%--
@@ -25,15 +24,15 @@
     <div class="row">
         <div class="panel panel-default">
             <div class="panel-body">
-                <div class="container" style="height: 80%; overflow-y: scroll;">
+                <div class="container shinima-dialog">
                     <c:forEach var="message" items="${nMessages}">
                         <div class="row message-bubble
                                 <c:if test="${message.getId_from()==user.getId()}">message-bubble-dark</c:if>
                                 <c:if test="${message.getId_from()==guest.getId()}">message-bubble-light</c:if>">
-                            <p class="text-muted">
+                            <p class="text-muted"><i>
                                 <c:if test="${message.getId_from()==user.getId()}">${userInfo.getName()} ${userInfo.getSurname()}</c:if>
                                 <c:if test="${message.getId_from()==guest.getId()}">${guest.getName()} ${guest.getSurname()}</c:if>
-                            </p>
+                            </i></p>
                             <span>${message.getText()}</span>
                             <small class="pull-right time"><i
                                     class="fa fa-clock-o"></i><ct:datetimeFormat format="dd.MM HH:mm:ss"
@@ -48,7 +47,7 @@
                             <input id="guestId" name="guestId" type="hidden" value="${guest.getId()}"/>
                             <input id="text" name="text" type="text" class="form-control" required/>
                             <span class="input-group-btn">
-                                <button class="btn btn-default" type="submit"><fmt:message key='send'/></button>
+                                <button class="btn btn-primary" type="submit"><fmt:message key='send'/></button>
                             </span>
                         </div>
                     </form>

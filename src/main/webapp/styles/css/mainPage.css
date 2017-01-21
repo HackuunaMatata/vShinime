@@ -8,6 +8,11 @@ body {
     font-family: vShinime, Arial, sans-serif;
 }
 
+/*.main-page {*/
+    /*background-image: url(/images/main.jpg);*/
+/*}*/
+
+/* Header */
 .shinima-header {
     z-index: 999;
     left: 0;
@@ -19,10 +24,11 @@ body {
     font-size: 1.2em;
 }
 
-.navbar-brand {
+.shinima-header .navbar-brand {
     font-size: 1.3em;
 }
 
+/* Edit profile */
 .shinima-input-file {
     margin-top: 12px;
     color: white;
@@ -42,16 +48,43 @@ body {
     margin: 35px 0;
 }
 
-.big-text {
-    font-size: 1.5em;
-}
-
 .articles {
     padding: 10px;
     margin: 0;
 }
 
-/*.glyphicon {  margin-bottom: 10px; margin-right: 10px;}*/
+.articles .article-buttons {
+    height: 40px;
+}
+
+.big-text {
+    font-size: 1.5em;
+}
+
+.shinima-dialog {
+    height: 80%;
+    overflow-y: scroll;
+}
+
+.shinima-messages .panel-title {
+    padding: 10px 0;
+    height: 50px;
+}
+
+.shinima-messages .message-time {
+    padding-top: 5px;
+}
+
+.shinima-messages .panel-body {
+    padding: 10px 0;
+    background-color: #ddd;
+    color:black;
+}
+
+.shinima-messages .last-message {
+    height: 3em;
+    overflow: hidden;
+}
 
 small {
     display: block;
@@ -78,11 +111,6 @@ small {
 
 .table-friends table td {
     width: 25%;
-}
-
-.table-friends a {
-    padding: 1px 10px;
-    margin-right: 50px;
 }
 
 .table-friends table tr:first-child {

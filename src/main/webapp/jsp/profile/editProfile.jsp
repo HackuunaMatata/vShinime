@@ -1,5 +1,3 @@
-<%@ page import="java.text.SimpleDateFormat" %>
-<%@ page import="java.util.Locale" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="ct" uri="/WEB-INF/formatTag" %>
 <%--
@@ -118,9 +116,8 @@
             </div>
         </div>
         <div class="form-group">
-            <label class="col-md-4 control-label"></label>
-            <div class="col-md-6">
-                <button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-thumbs-up"></span>
+            <div class="col-md-offset-4 col-md-6">
+                <button type="submit" class="btn btn-success col-md-6"><span class="glyphicon glyphicon-thumbs-up"></span>
                     <fmt:message key='submit'/></button>
             </div>
         </div>
@@ -136,9 +133,8 @@
         </div>
         <%--------------%>
         <div class="form-group">
-            <label class="col-md-4 control-label"></label>
-            <div class="col-md-6">
-                <button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-thumbs-up"></span>
+            <div class="col-md-offset-4 col-md-6">
+                <button type="submit" class="btn btn-success col-md-6"><span class="glyphicon glyphicon-thumbs-up"></span>
                     <fmt:message key='submit'/></button>
             </div>
         </div>

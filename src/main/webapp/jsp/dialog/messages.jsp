@@ -1,4 +1,3 @@
-<%@ page import="java.text.SimpleDateFormat" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="ct" uri="/WEB-INF/datetimeTag" %>
 <%--
@@ -21,21 +20,20 @@
 <%@ include file="../header.jsp" %>
 <div class="col-md-offset-3 col-md-6">
     <c:forEach var="message" items="${lastMessages}">
-        <div class="panel panel-default">
-            <div class="panel-title" style="padding: 10px 0; height: 50px;">
+        <div class="panel panel-default shinima-messages">
+            <div class="panel-title">
                 <div class="col-md-offset-1 col-md-7">${message.getColleague()}</div>
-                <div class="col-md-4" style="padding-top: 5px;">
+                <div class="col-md-4 message-time">
                     <small><ct:datetimeFormat format="dd.MM HH:mm:ss" datetime="${message.getDate()}"/> <i
                             class="glyphicon glyphicon-time"></i></small>
-
                 </div>
             </div>
             <a href="dialog?id=${message.getColleagueId()}">
-                <div class="panel-body" style="padding: 10px 0; background-color: #ddd; color:black;">
+                <div class="panel-body">
                     <div class="col-md-1">
                         <small>${message.getFrom()}</small>
                     </div>
-                    <div class="col-md-10" style="height: 3em; overflow: hidden;">${message.getMessage()}</div>
+                    <div class="col-md-10 last-message">${message.getMessage()}</div>
                     <div class="col-md-1"><span class="label label-primary badge">${message.getCountUnreaded()}</span>
                     </div>
                 </div>
