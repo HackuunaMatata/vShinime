@@ -9,10 +9,10 @@ import java.util.List;
  * Created by HackuunaMatata on 12.01.2017.
  */
 public interface ArticlesDAO {
-    public void addArticle(int userId, String title, String annotation, Date date);
-    public List<Articles> getArticlesByUserId(int userId);
-    public void updateArticleForUser(String newAnnotation, Date newDate, int userId, String title);
-    public void deleteArticleForUser(String title, int userId);
-    public void deleteAllArticlesForUser(int userId);
-    public Articles getArticleForUserByTitle(int userId, String title);
+    void addArticle(int userId, String title, String annotation, Date date);
+    List<Articles> getArticlesByUserId(int userId);
+    void updateArticleForUser(String newAnnotation, Date newDate, int userId, String title);
+    void deleteArticleForUser(String title, int userId);
+    void deleteAllArticlesForUser(int userId);
+    Articles getArticleForUserByTitle(int userId, String title);
 }

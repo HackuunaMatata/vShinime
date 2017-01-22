@@ -54,6 +54,14 @@ public class MySQLDAO extends DAOFactory {
         }
     }
 
+    /**
+     * Get result set from DB with chosen conditions.
+     *
+     * @param table the name of the table in DB
+     * @param condition string of parameters after <code>WHERE</code>
+     * @return a <code>ResultSet</code> object that contains the data produced
+     *         by the given query or <code>null</code>
+     */
     protected ResultSet select(String table, String condition) {
         String sql = "SELECT * FROM " + table + " WHERE " + condition;
         log.info(sql);
